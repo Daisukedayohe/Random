@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ang Makulay na Mundo ng Wika - The Ultimate Reviewer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .font-handwritten {
+            font-family: 'Kalam', cursive;
+        }
+        .card {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .card-content {
+            flex-grow: 1;
+        }
+        .highlight-yellow {
+            background-color: rgba(255, 248, 179, 0.9);
+            padding: 0 4px;
+            border-radius: 4px;
+        }
+        .callout {
+            background-color: rgba(0,0,0,0.03);
+            border-left: 3px solid;
+            padding: 8px 12px;
+            margin-top: 10px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-sky-200 via-rose-200 to-amber-200 min-h-screen p-4 sm:p-6 md:p-8">
+
+    <div class="max-w-screen-xl mx-auto">
+        <!-- Header -->
+        <header class="text-center mb-8 md:mb-12">
+            <h1 class="text-4xl md:text-6xl font-bold text-gray-800 font-handwritten">Ang Makulay na Mundo ng Wika</h1>
+            <p class="text-lg md:text-xl text-gray-600 mt-2">Ang Pinaka-kumpletong Visual na Gabay para sa Iyong Pagsusulit!</p>
+        </header>
+
+        <!-- Main Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 md:gap-8">
+
+            <!-- Section 1: Ano ang Wika? -->
+            <div class="card rounded-2xl p-6 shadow-lg lg:col-span-4">
+                <div class="card-content">
+                    <h2 class="text-2xl font-bold text-sky-600 font-handwritten mb-4">1. Ano ang Wika?</h2>
+                    <p class="text-gray-700 mb-4">Isang <span class="font-semibold text-sky-700">sistema ng komunikasyon</span> na may <span class="font-semibold text-sky-700">kolektibong pagkakaunawa</span>.</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div class="p-3 bg-sky-100 rounded-lg"><strong>Sistematiko:</strong> May ayos at tuntunin (tunog → salita → pangungusap → diskurso).</div>
+                        <div class="p-3 bg-sky-100 rounded-lg"><strong>Arbitraryo:</strong> Napagkasunduan; partikular sa isang lugar.</div>
+                        <div class="p-3 bg-sky-100 rounded-lg"><strong>Dinamiko:</strong> Buháy at nagbabago. Ang wikang hindi nagbabago ay namamatay.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 2: Kahalagahan -->
+            <div class="card rounded-2xl p-6 shadow-lg lg:col-span-2">
+                <div class="card-content">
+                    <h2 class="text-2xl font-bold text-rose-600 font-handwritten mb-4">2. Kahalagahan</h2>
+                    <div class="space-y-2 text-sm">
+                        <p>• <strong class="text-rose-700">Pakikipagtalastasan</strong></p>
+                        <p>• <strong class="text-rose-700">Paglalahad ng Saloobin</strong></p>
+                        <p>• <strong class="text-rose-700">Salamin ng Pagkakakilanlan</strong></p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Section 3: Pagkatuto ng Wika -->
+            <div class="card rounded-2xl p-6 shadow-lg lg:col-span-6">
+                <div class="card-content">
+                    <h2 class="text-2xl font-bold text-teal-600 font-handwritten mb-4">3. Paano Natututo ng Wika?</h2>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div>
+                            <h3 class="font-semibold text-xl text-teal-700 mb-2">Unang Wika (L1)</h3>
+                            <p class="text-gray-600 text-sm">Proseso: <strong class="text-teal-800">PAGTAMO (Acquisition)</strong> - natural at di-pormal. <br> <span class="text-xs text-gray-500">Teorya: Classical Conditioning (Pavlov), Language Acquisition (Skinner).</span></p>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-xl text-teal-700 mb-2">Pangalawang Wika (L2)</h3>
+                            <p class="text-gray-600 text-sm">Proseso: <strong class="text-teal-800">PAGKATUTO (Learning)</strong> - pormal at may kamalayan. <br> <span class="text-xs text-gray-500">Ayon kay <strong class="text-teal-800">Stephen Krashen</strong>, magkaiba ang pagtamo sa pagkatuto.</span></p>
+                        </div>
+                        <div class="p-4 bg-teal-50 rounded-lg border-l-4 border-teal-500">
+                            <h4 class="font-bold text-teal-800">🧠 Critical Period & Lateralisasyon</h4>
+                            <p class="text-gray-700 text-sm">Mas madali matuto bago mag-<span class="font-semibold">puberty stage</span>. Pagkatapos nito, nagkakaroon ng <strong class="text-teal-900">lateralisasyon</strong> (brain specialization):<br>• <strong class="text-teal-900">Kaliwa:</strong> Wika, Lohika, Math <br>• <strong class="text-teal-900">Kanan:</strong> Emosyon, Imahinasyon</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 4: Varyasyon ng Wika -->
+            <div class="card rounded-2xl p-6 shadow-lg lg:col-span-4">
+                <div class="card-content">
+                    <h2 class="text-2xl font-bold text-purple-600 font-handwritten mb-4">4. Varyasyon at Varayti ng Wika</h2>
+                    <p class="mb-4 text-sm text-gray-600">Ang wika ay <strong class="text-purple-700">Heterogeneous</strong> (magkakaiba). Ayon kina <strong class="text-purple-800">Sapir, Saussure, at Fishman</strong>, ang wika ay produkto ng lipunan.</p>
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div class="p-3 bg-purple-100 rounded-lg">
+                            <h3 class="font-bold text-purple-800">🌍 DIYALEKTO</h3>
+                            <p class="text-xs">Batay sa <span class="font-semibold">lugar</span>. (Dimensyong Heograpiko). Ang pagkakaiba sa <strong class="text-purple-900">accent o punto</strong> ay nagpapakita ng pinagmulan.</p>
+                        </div>
+                        <div class="p-3 bg-purple-100 rounded-lg">
+                            <h3 class="font-bold text-purple-800">👤 IDYOLEK</h3>
+                            <p class="text-xs"><span class="font-semibold">Sariling paraan</span> ng pagsasalita.</p>
+                        </div>
+                        <div class="p-3 bg-purple-100 rounded-lg col-span-2">
+                            <h3 class="font-bold text-purple-800">👥 SOSYOLEK</h3>
+                            <p class="text-xs">Batay sa <span class="font-semibold">pangkat-panlipunan</span>. (Dimensyong Sosyal). Hal: Jargon, Register, Swardspeak/Gay Lingo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 5: Lingguwistika -->
+            <div class="card rounded-2xl p-6 shadow-lg lg:col-span-2">
+                <div class="card-content">
+                    <h2 class="text-2xl font-bold text-cyan-600 font-handwritten mb-4">5. Lingguwistika</h2>
+                    <p class="text-sm mb-2">Ang siyentipikong pag-aaral ng wika. Ang taong nag-aaral nito ay <strong class="text-cyan-800">Lingguwista</strong>.</p>
+                    <div class="space-y-1 text-xs">
+                        <p>• <strong class="text-cyan-700">Ponolohiya:</strong> Pag-aaral ng tunog (palatunugan).</p>
+                        <p>• <strong class="text-cyan-700">Morpolohiya:</strong> Pag-aaral ng salita (palabuoan).</p>
+                        <p>• <strong class="text-cyan-700">Sintaks:</strong> Pag-aaral ng pangungusap (palaugnayan).</p>
+                        <p>• <strong class="text-cyan-700">Semantiks:</strong> Pag-aaral ng kahulugan (pagpapakahulugan).</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 6: Bilingguwalismo & Multilingguwalismo -->
+            <div class="card rounded-2xl p-6 shadow-lg lg:col-span-6">
+                 <div class="card-content">
+                    <h2 class="text-2xl font-bold text-orange-600 font-handwritten mb-4">6. Bilingguwalismo at Multilingguwalismo</h2>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="md:col-span-1">
+                            <p class="text-gray-600 text-sm"><strong class="text-orange-800">Monolingguwal:</strong> Isang wika. <br><strong class="text-orange-800">Bilingguwal:</strong> Dalawang wika. <br><strong class="text-orange-800">Multilingguwal:</strong> Higit sa dalawang wika.</p>
+                             <div class="callout border-orange-400 text-xs mt-2">
+                               <p><strong class="text-orange-800">Paraan ng Pagkatuto:</strong><br>• <strong class="text-orange-900">Pormal:</strong> Sa paaralan.<br>• <strong class="text-orange-900">Impormal:</strong> Sa bahay.</p>
+                               <p class="mt-1"><strong class="text-orange-800">Antas ng Paggamit (Li):</strong><br>• <strong class="text-orange-900">Aktibo:</strong> Pagsasalita/Pagsulat.<br>• <strong class="text-orange-900">Pasibo:</strong> Pakikinig/Pagbasa.</p>
+                            </div>
+                        </div>
+                        <div class="md:col-span-2 p-4 bg-orange-50 rounded-lg">
+                            <h4 class="font-bold text-orange-800">Antas ng Bilingguwalismo (Fishman)</h4>
+                            <div class="grid md:grid-cols-2 gap-4 mt-2 text-sm">
+                                <div>
+                                    <h5 class="font-semibold text-orange-900">Indibidwal na Lebel</h5>
+                                    <p class="text-xs">Ito ay <span class="highlight-yellow">pinipili at limitado</span>. Walang opisyal na suporta mula sa lipunan.</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-orange-900">Panlipunang Lebel</h5>
+                                    <p class="text-xs">Ito ay <span class="highlight-yellow">opisyal at legal</span>. Sinusuportahan ng mga polisiya at batas ng estado. Nagiging usaping <strong class="text-orange-900">multikulturalismo</strong> at <strong class="text-orange-900">pampolitika</strong>.</p>
+                                </div>
+                            </div>
+                            <h4 class="font-bold text-green-800 mt-4">Mga Bentahe:</h4>
+                            <p class="text-xs text-green-900">Mas sensitibo sa pakikipagtalastasan, mas mataas ang kumpiyansa, mas mahusay lumutas ng suliranin, at mas kritikal mag-isip.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <footer class="text-center mt-8 md:mt-12">
+            <p class="text-gray-600 font-semibold">Good luck sa iyong exam! Kayang-kaya mo 'yan!</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
