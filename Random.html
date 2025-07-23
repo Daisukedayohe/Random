@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Illustrated Guide to Philosophy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <!--
+    Narrative & Structure Plan:
+    1.  Hero Section: A visually striking introduction defining Philosophy.
+    2.  The Four Pillars of Thought: Presenting the core principles of logic as foundational blocks.
+    3.  A Journey Through Time: A dynamic grid of cards detailing the historical evolution of philosophy.
+    4.  The Great Debate: A dedicated visual section for Rationalism vs. Empiricism and Kant's synthesis.
+    5.  The Anatomy of Philosophy: A central donut chart to visualize the main branches.
+    6.  A Filipino Perspective: Highlighting key cultural-philosophical concepts with distinct visual callouts.
+    7.  Ways of Seeing: A simple, clear comparison of Holistic vs. Partial perspectives.
+    8.  Final Thought: A motivational conclusion using a key philosophical quote.
+
+    Visualization Plan:
+    -   Historical Timeline: Goal: Organize/Change. Visualization: Styled cards in a responsive grid. Method: Structured HTML with Tailwind. CONFIRMED: NO SVG/Mermaid.
+    -   Branches of Philosophy: Goal: Compare/Composition. Visualization: Donut Chart. Justification: Excellent for showing parts of a whole concept. Method: Chart.js (Canvas). CONFIRMED: NO SVG.
+    -   Rationalism vs. Empiricism: Goal: Compare/Relationships. Visualization: A Venn-like diagram using styled HTML divs. Justification: Most intuitive way to show two ideas and their intersection. Method: Styled HTML with CSS positioning. CONFIRMED: NO SVG/Mermaid.
+    -   All other elements use styled HTML, Unicode characters, and a rich design system. CONFIRMED: NO SVG/Mermaid.
+
+    Color Palette Chosen: Brilliant Blues & Gold
+    -   #0D1B2A (Deep Navy)
+    -   #1B263B (Shadow Blue)
+    -   #415A77 (Slate Blue)
+    -   #778DA9 (Steel Blue)
+    -   #E0E1DD (Pale Silver)
+    -   #FCA311 (Vibrant Gold/Accent)
+    -   Background: Gradient from #0D1B2A to #1B263B
+    -   Text: #E0E1DD (Pale Silver)
+    -   Cards: #1B263B with borders of #415A77
+
+    NEITHER Mermaid JS NOR SVG were used anywhere in this output.
+    -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0D1B2A;
+            background-image: linear-gradient(180deg, #0D1B2A 0%, #1B263B 100%);
+            color: #E0E1DD;
+        }
+        .text-gold { color: #FCA311; }
+        .bg-gold { background-color: #FCA311; }
+        .border-gold { border-color: #FCA311; }
+        .card {
+            background-color: rgba(27, 38, 59, 0.5);
+            border: 1px solid #415A77;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-color: #778DA9;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 450px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 450px;
+            }
+        }
+        .title-underline {
+            position: relative;
+            display: inline-block;
+        }
+        .title-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: #FCA311;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-7xl">
+
+        <header class="text-center my-16 md:my-24">
+            <h1 class="text-4xl md:text-6xl font-black tracking-tight text-white">The Illustrated Guide to Philosophy</h1>
+            <p class="mt-4 text-lg md:text-xl text-slate-300">Your journey into the love of wisdom begins now.</p>
+        </header>
+
+        <section id="what-is-philosophy" class="my-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-white title-underline">What is Philosophy?</h2>
+            </div>
+            <div class="text-center max-w-3xl mx-auto text-lg text-slate-200">
+                <p>From the Greek <span class="font-semibold text-gold">Philos (Love)</span> and <span class="font-semibold text-gold">Sophia (Wisdom)</span>, it is the science that uses our <span class="font-semibold">natural light of reason</span> to study the <span class="font-semibold">highest principles of all things</span>.</p>
+            </div>
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="card p-6 rounded-lg">
+                    <p class="text-5xl">💰</p>
+                    <h3 class="text-xl font-bold mt-4 text-white">Lovers of Gain</h3>
+                    <p class="text-slate-300 mt-2">Seekers of material wealth.</p>
+                </div>
+                <div class="card p-6 rounded-lg">
+                    <p class="text-5xl">🏆</p>
+                    <h3 class="text-xl font-bold mt-4 text-white">Lovers of Honor</h3>
+                    <p class="text-slate-300 mt-2">Seekers of fame and glory.</p>
+                </div>
+                <div class="card p-6 rounded-lg">
+                    <p class="text-5xl">🧠</p>
+                    <h3 class="text-xl font-bold mt-4 text-white">Lovers of Wisdom</h3>
+                    <p class="text-slate-300 mt-2">Seekers of knowledge itself.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="principles" class="my-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-white title-underline">The Four Pillars of Thought</h2>
+                 <p class="mt-8 text-lg text-slate-300 max-w-3xl mx-auto">These are the fundamental laws of logic that provide the foundation for all rational thought.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="card p-6 rounded-lg text-center">
+                    <h3 class="font-bold text-lg text-gold">Identity</h3>
+                    <p class="mt-2 text-slate-200">Whatever is, is. A thing is itself.</p>
+                </div>
+                <div class="card p-6 rounded-lg text-center">
+                    <h3 class="font-bold text-lg text-gold">Non-Contradiction</h3>
+                    <p class="mt-2 text-slate-200">Something cannot be true and false at the same time.</p>
+                </div>
+                <div class="card p-6 rounded-lg text-center">
+                    <h3 class="font-bold text-lg text-gold">Excluded Middle</h3>
+                    <p class="mt-2 text-slate-200">A statement is either true or false, with no middle ground.</p>
+                </div>
+                 <div class="card p-6 rounded-lg text-center">
+                    <h3 class="font-bold text-lg text-gold">Sufficient Reason</h3>
+                    <p class="mt-2 text-slate-200">Everything must have a reason or a cause for its existence.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="timeline" class="my-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-white title-underline">A Journey Through Time</h2>
+                <p class="mt-8 text-lg text-slate-300 max-w-3xl mx-auto">Explore the evolution of Western philosophy, from the ancient questions about the cosmos to modern inquiries into the human condition.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <article class="card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gold">Pre-Socratic Period</h3>
+                    <p class="mt-2 text-slate-300">The dawn of philosophy. Thinkers like <strong class="text-white">Thales</strong>, <strong class="text-white">Anaximander</strong>, and <strong class="text-white">Pythagoras</strong> sought the single, underlying substance of the universe (the *arche*).</p>
+                </article>
+                <article class="card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gold">Socratic Period</h3>
+                    <p class="mt-2 text-slate-300">A shift from cosmology to humanity. <strong class="text-white">Socrates</strong> introduced his method of questioning, and his student <strong class="text-white">Plato</strong> championed reason as the path to truth.</p>
+                </article>
+                 <article class="card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gold">Aristotle</h3>
+                    <p class="mt-2 text-slate-300">Plato's student, who took a different path. <strong class="text-white">Aristotle</strong> was an empiricist, believing that knowledge is derived from our sensory experiences of the world.</p>
+                </article>
+                <article class="card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gold">Medieval Period</h3>
+                    <p class="mt-2 text-slate-300">The age of Scholasticism. Philosophers like <strong class="text-white">St. Augustine</strong> and <strong class="text-white">St. Thomas Aquinas</strong> worked to synthesize philosophy with Christian theology.</p>
+                </article>
+                <article class="card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gold">Modern Period</h3>
+                    <p class="mt-2 text-slate-300">The era of epistemology. The central conflict was between <strong class="text-white">Rationalism</strong> (knowledge from reason) and <strong class="text-white">Empiricism</strong> (knowledge from experience).</p>
+                </article>
+                <article class="card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gold">Contemporary Period</h3>
+                    <p class="mt-2 text-slate-300">Philosophy splits into two major traditions: the <strong class="text-white">Analytic</strong> (focused on logic and language) and the <strong class="text-white">Continental</strong> (focused on subjective experience).</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="great-debate" class="my-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-white title-underline">The Great Debate: How We Know</h2>
+                 <p class="mt-8 text-lg text-slate-300 max-w-3xl mx-auto">The clash between reason and experience defined modern philosophy until a titan of thought offered a synthesis.</p>
+            </div>
+            <div class="card p-8 rounded-lg flex flex-col md:flex-row items-center gap-8">
+                <div class="w-full md:w-2/3 relative h-72 flex items-center justify-center">
+                    <div class="absolute w-48 h-48 border-4 border-dashed border-blue-400 rounded-full flex items-center justify-center text-center p-4" style="left: 15%; animation: spin 20s linear infinite;">
+                        <span class="font-bold text-blue-300">Rationalism<br>Knowledge is innate (a priori)</span>
+                    </div>
+                     <div class="absolute w-48 h-48 border-4 border-dashed border-amber-400 rounded-full flex items-center justify-center text-center p-4" style="right: 15%; animation: spin-reverse 20s linear infinite;">
+                        <span class="font-bold text-amber-300">Empiricism<br>Knowledge is experienced (a posteriori)</span>
+                    </div>
+                    <div class="absolute z-10 text-center bg-slate-800 p-4 rounded-full">
+                        <h4 class="text-lg font-bold text-gold">Kant's Synthesis</h4>
+                        <p class="text-sm text-slate-200">Reason structures experience.</p>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/3">
+                    <h3 class="text-2xl font-bold text-white">A New Path Forward</h3>
+                    <p class="mt-2 text-slate-300"><strong class="text-blue-300">Rationalists</strong> like Plato argued we are born with knowledge. <strong class="text-amber-300">Empiricists</strong> like Locke said our minds are a blank slate. <strong class="text-gold">Immanuel Kant</strong> brilliantly merged them, stating that our minds have innate structures (reason) that organize the raw data from our senses (experience).</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="branches" class="my-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-white title-underline">The Anatomy of Philosophy</h2>
+                <p class="mt-8 text-lg text-slate-300 max-w-3xl mx-auto">Philosophy is a vast field with several major branches, each asking a different fundamental question about our world and ourselves.</p>
+            </div>
+            <div class="card p-6 rounded-lg">
+                <div class="chart-container">
+                    <canvas id="branchesChart"></canvas>
+                </div>
+            </div>
+        </section>
+        
+        <section id="filipino-philosophy" class="my-20">
+             <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-white title-underline">A Filipino Perspective</h2>
+                <p class="mt-8 text-lg text-slate-300 max-w-3xl mx-auto">Exploring unique cultural concepts that shape the Filipino worldview.</p>
+            </div>
+             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="card p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold text-gold">Loob</h3>
+                    <p class="text-slate-200 mt-2">The inner self; a holistic concept of one's core being and innate goodness.</p>
+                </div>
+                <div class="card p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold text-gold">Bahala Na!</h3>
+                    <p class="text-slate-200 mt-2">A courageous faith. Trusting in a higher power after one has done their absolute best.</p>
+                </div>
+                <div class="card p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold text-gold">Gulong ng Palad</h3>
+                    <p class="text-slate-200 mt-2">The "Wheel of Fortune." The belief that life is cyclical, with inevitable ups and downs.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="perspectives" class="my-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="card p-8 rounded-lg text-center">
+                     <h3 class="text-2xl font-bold text-white">Partial Perspective</h3>
+                     <p class="mt-2 text-slate-300">Viewing reality based on a single factor or context. Limited and subjective.</p>
+                </div>
+                 <div class="card p-8 rounded-lg text-center">
+                     <h3 class="text-2xl font-bold text-white">Holistic Perspective</h3>
+                     <p class="mt-2 text-slate-300">Seeing the "big picture" by considering all aspects and their interconnections. Broader and more synthesized.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center my-16 border-t border-slate-700 pt-12">
+             <p class="text-2xl font-semibold text-white">"The unexamined life is not worth living."</p>
+             <p class="text-md text-slate-400 mt-2">- Socrates</p>
+        </footer>
+
+    </div>
+
+    <script>
+        function wrapText(text, maxLen) {
+            if (typeof text !== 'string' || text.length <= maxLen) {
+                return text;
+            }
+            const words = text.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + ' ' + word).trim().length > maxLen) {
+                    lines.push(currentLine.trim());
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            }
+            if (currentLine) {
+                lines.push(currentLine.trim());
+            }
+            return lines;
+        }
+
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            }
+            return label;
+        };
+        
+        const commonChartOptions = {
+            maintainAspectRatio: false,
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        color: '#E0E1DD',
+                        font: {
+                            family: 'Inter',
+                            size: 14
+                        },
+                        padding: 20
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    },
+                    backgroundColor: '#0D1B2A',
+                    titleColor: '#FCA311',
+                    bodyColor: '#E0E1DD',
+                    padding: 10,
+                    bodyFont: {
+                        family: 'Inter'
+                    },
+                    titleFont: {
+                        family: 'Inter',
+                        weight: 'bold'
+                    }
+                }
+            }
+        };
+
+        const branchesCtx = document.getElementById('branchesChart').getContext('2d');
+        const branchLabels = [
+            'Metaphysics (Reality)', 
+            'Epistemology (Knowledge)', 
+            'Ethics (Morality)', 
+            'Aesthetics (Beauty)', 
+            'Logic (Reasoning)'
+        ];
+        new Chart(branchesCtx, {
+            type: 'doughnut',
+            data: {
+                labels: branchLabels.map(label => wrapText(label, 16)),
+                datasets: [{
+                    label: 'Branch of Philosophy',
+                    data: [25, 25, 20, 15, 15],
+                    backgroundColor: [
+                        '#0582CA',
+                        '#00A6FB',
+                        '#FCA311',
+                        '#778DA9',
+                        '#415A77'
+                    ],
+                    borderColor: '#1B263B',
+                    borderWidth: 5,
+                    hoverOffset: 15
+                }]
+            },
+            options: {
+                ...commonChartOptions,
+                cutout: '60%'
+            }
+        });
+    </script>
+    <style>
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        @keyframes spin-reverse {
+            from { transform: rotate(360deg); }
+            to { transform: rotate(0deg); }
+        }
+    </style>
+</body>
+</html>
