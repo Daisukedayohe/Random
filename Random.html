@@ -3,27 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Illustrated Guide to Philosophy</title>
+    <title>The Illustrated Guide to Philosophy (Definitive Edition)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
     <!--
-    Narrative & Structure Plan:
-    1.  Hero Section: A visually striking introduction defining Philosophy.
-    2.  The Four Pillars of Thought: Presenting the core principles of logic as foundational blocks.
-    3.  A Journey Through Time: A dynamic grid of cards detailing the historical evolution of philosophy.
-    4.  The Great Debate: A dedicated visual section for Rationalism vs. Empiricism and Kant's synthesis.
-    5.  The Anatomy of Philosophy: A central donut chart to visualize the main branches.
-    6.  A Filipino Perspective: Highlighting key cultural-philosophical concepts with distinct visual callouts.
-    7.  Ways of Seeing: A simple, clear comparison of Holistic vs. Partial perspectives.
-    8.  Final Thought: A motivational conclusion using a key philosophical quote.
+    Narrative & Structure Plan (Definitive):
+    1.  Hero Section: Introduction to Philosophy's meaning.
+    2.  The Nature of Philosophy: Detailing its four core characteristics.
+    3.  The Four Pillars of Thought: Presenting the fundamental principles of logic.
+    4.  A Journey Through Time: A definitive, expanded grid covering all philosophical eras and key thinkers from all provided documents.
+    5.  The Great Debate: Visualizing Rationalism vs. Empiricism with all key figures.
+    6.  The Anatomy of Philosophy: A central donut chart visualizing the main branches.
+    7.  A Filipino Perspective: A fully detailed section with nuanced explanations of Loob, Bahala Na, and Filipino Time.
+    8.  Ways of Seeing: Comparing Holistic vs. Partial perspectives.
+    9.  Final Thought: A concluding motivational quote.
 
-    Visualization Plan:
+    Visualization Plan (Definitive):
     -   Historical Timeline: Goal: Organize/Change. Visualization: Styled cards in a responsive grid. Method: Structured HTML with Tailwind. CONFIRMED: NO SVG/Mermaid.
-    -   Branches of Philosophy: Goal: Compare/Composition. Visualization: Donut Chart. Justification: Excellent for showing parts of a whole concept. Method: Chart.js (Canvas). CONFIRMED: NO SVG.
-    -   Rationalism vs. Empiricism: Goal: Compare/Relationships. Visualization: A Venn-like diagram using styled HTML divs. Justification: Most intuitive way to show two ideas and their intersection. Method: Styled HTML with CSS positioning. CONFIRMED: NO SVG/Mermaid.
+    -   Branches of Philosophy: Goal: Compare/Composition. Visualization: Donut Chart. Method: Chart.js (Canvas). CONFIRMED: NO SVG.
+    -   Rationalism vs. Empiricism: Goal: Compare/Relationships. Visualization: A Venn-like diagram using styled HTML divs. Method: Styled HTML with CSS. CONFIRMED: NO SVG/Mermaid.
     -   All other elements use styled HTML, Unicode characters, and a rich design system. CONFIRMED: NO SVG/Mermaid.
 
     Color Palette Chosen: Brilliant Blues & Gold
@@ -77,11 +78,12 @@
         .title-underline {
             position: relative;
             display: inline-block;
+            padding-bottom: 8px;
         }
         .title-underline::after {
             content: '';
             position: absolute;
-            bottom: -8px;
+            bottom: 0;
             left: 50%;
             transform: translateX(-50%);
             width: 60px;
@@ -97,31 +99,32 @@
 
         <header class="text-center my-16 md:my-24">
             <h1 class="text-4xl md:text-6xl font-black tracking-tight text-white">The Illustrated Guide to Philosophy</h1>
-            <p class="mt-4 text-lg md:text-xl text-slate-300">Your journey into the love of wisdom begins now.</p>
+            <p class="mt-4 text-lg md:text-xl text-slate-300">Your definitive journey into the love of wisdom begins now.</p>
         </header>
 
         <section id="what-is-philosophy" class="my-20">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-white title-underline">What is Philosophy?</h2>
+                <h2 class="text-3xl font-bold text-white title-underline">The Nature of Philosophy</h2>
             </div>
-            <div class="text-center max-w-3xl mx-auto text-lg text-slate-200">
-                <p>From the Greek <span class="font-semibold text-gold">Philos (Love)</span> and <span class="font-semibold text-gold">Sophia (Wisdom)</span>, it is the science that uses our <span class="font-semibold">natural light of reason</span> to study the <span class="font-semibold">highest principles of all things</span>.</p>
+             <div class="text-center max-w-3xl mx-auto text-lg text-slate-200 mb-12">
+                <p>From the Greek <span class="font-semibold text-gold">Philos (Love)</span> and <span class="font-semibold text-gold">Sophia (Wisdom)</span>, philosophy is formally defined as the science that by natural light of reason studies the first causes or highest principles of all things.</p>
             </div>
-            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="card p-6 rounded-lg">
-                    <p class="text-5xl">💰</p>
-                    <h3 class="text-xl font-bold mt-4 text-white">Lovers of Gain</h3>
-                    <p class="text-slate-300 mt-2">Seekers of material wealth.</p>
+                    <h3 class="font-bold text-lg text-gold">A Science</h3>
+                    <p class="mt-2 text-slate-300">It is a systematic investigation following specific procedures to create an organized body of knowledge.</p>
                 </div>
-                <div class="card p-6 rounded-lg">
-                    <p class="text-5xl">🏆</p>
-                    <h3 class="text-xl font-bold mt-4 text-white">Lovers of Honor</h3>
-                    <p class="text-slate-300 mt-2">Seekers of fame and glory.</p>
+                 <div class="card p-6 rounded-lg">
+                    <h3 class="font-bold text-lg text-gold">Natural Light of Reason</h3>
+                    <p class="mt-2 text-slate-300">It uses unaided human reason alone, not instruments or supernatural revelation.</p>
                 </div>
-                <div class="card p-6 rounded-lg">
-                    <p class="text-5xl">🧠</p>
-                    <h3 class="text-xl font-bold mt-4 text-white">Lovers of Wisdom</h3>
-                    <p class="text-slate-300 mt-2">Seekers of knowledge itself.</p>
+                 <div class="card p-6 rounded-lg">
+                    <h3 class="font-bold text-lg text-gold">Study of All Things</h3>
+                    <p class="mt-2 text-slate-300">It is holistic, questioning everything, unlike partial sciences that focus on one object of study.</p>
+                </div>
+                 <div class="card p-6 rounded-lg">
+                    <h3 class="font-bold text-lg text-gold">First Cause or Highest Principle</h3>
+                    <p class="mt-2 text-slate-300">It seeks the ultimate "why"—the foundational reasons from which everything proceeds.</p>
                 </div>
             </div>
         </section>
@@ -134,19 +137,19 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="card p-6 rounded-lg text-center">
                     <h3 class="font-bold text-lg text-gold">Identity</h3>
-                    <p class="mt-2 text-slate-200">Whatever is, is. A thing is itself.</p>
+                    <p class="mt-2 text-slate-200">Whatever is, is; whatever is not, is not. Everything is its own being.</p>
                 </div>
                 <div class="card p-6 rounded-lg text-center">
                     <h3 class="font-bold text-lg text-gold">Non-Contradiction</h3>
-                    <p class="mt-2 text-slate-200">Something cannot be true and false at the same time.</p>
+                    <p class="mt-2 text-slate-200">It is impossible for a thing to be and not be at the same time and in the same respect.</p>
                 </div>
                 <div class="card p-6 rounded-lg text-center">
                     <h3 class="font-bold text-lg text-gold">Excluded Middle</h3>
-                    <p class="mt-2 text-slate-200">A statement is either true or false, with no middle ground.</p>
+                    <p class="mt-2 text-slate-200">A thing either is or is not; there is no middle ground possible between being and not-being.</p>
                 </div>
                  <div class="card p-6 rounded-lg text-center">
                     <h3 class="font-bold text-lg text-gold">Sufficient Reason</h3>
-                    <p class="mt-2 text-slate-200">Everything must have a reason or a cause for its existence.</p>
+                    <p class="mt-2 text-slate-200">Nothing exists without a sufficient reason for its being and existence.</p>
                 </div>
             </div>
         </section>
@@ -154,32 +157,32 @@
         <section id="timeline" class="my-20">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-white title-underline">A Journey Through Time</h2>
-                <p class="mt-8 text-lg text-slate-300 max-w-3xl mx-auto">Explore the evolution of Western philosophy, from the ancient questions about the cosmos to modern inquiries into the human condition.</p>
+                <p class="mt-8 text-lg text-slate-300 max-w-3xl mx-auto">Explore the evolution of Western philosophy, from ancient myths to modern inquiries into the human condition.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                 <article class="card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-gold">Pre-Philosophical Period</h3>
+                    <p class="mt-2 text-slate-300">Before formal philosophy, ancient cultures (Babylonians, Chinese, Hindus, Egyptians) explained the world through myths, legends, and supernatural powers.</p>
+                </article>
                 <article class="card p-6 rounded-lg">
                     <h3 class="text-xl font-bold text-gold">Pre-Socratic Period</h3>
-                    <p class="mt-2 text-slate-300">The dawn of philosophy. Thinkers like <strong class="text-white">Thales</strong>, <strong class="text-white">Anaximander</strong>, and <strong class="text-white">Pythagoras</strong> sought the single, underlying substance of the universe (the *arche*).</p>
+                    <p class="mt-2 text-slate-300">The dawn of rational inquiry. <strong class="text-white">Thales (Water)</strong>, <strong class="text-white">Anaximander (Apeiron)</strong>, <strong class="text-white">Anaximenes (Air)</strong>, and <strong class="text-white">Pythagoras (Numbers)</strong> sought the single, underlying substance of the universe.</p>
                 </article>
                 <article class="card p-6 rounded-lg">
-                    <h3 class="text-xl font-bold text-gold">Socratic Period</h3>
-                    <p class="mt-2 text-slate-300">A shift from cosmology to humanity. <strong class="text-white">Socrates</strong> introduced his method of questioning, and his student <strong class="text-white">Plato</strong> championed reason as the path to truth.</p>
-                </article>
-                 <article class="card p-6 rounded-lg">
-                    <h3 class="text-xl font-bold text-gold">Aristotle</h3>
-                    <p class="mt-2 text-slate-300">Plato's student, who took a different path. <strong class="text-white">Aristotle</strong> was an empiricist, believing that knowledge is derived from our sensory experiences of the world.</p>
+                    <h3 class="text-xl font-bold text-gold">Socrates, Plato & Aristotle</h3>
+                    <p class="mt-2 text-slate-300"><strong class="text-white">Socrates</strong> used his questioning method. <strong class="text-white">Plato</strong> championed reason and the world of Forms, arguing for philosopher kings in *The Republic*. <strong class="text-white">Aristotle</strong>, philosophizing from wonder, focused on empirical observation.</p>
                 </article>
                 <article class="card p-6 rounded-lg">
                     <h3 class="text-xl font-bold text-gold">Medieval Period</h3>
-                    <p class="mt-2 text-slate-300">The age of Scholasticism. Philosophers like <strong class="text-white">St. Augustine</strong> and <strong class="text-white">St. Thomas Aquinas</strong> worked to synthesize philosophy with Christian theology.</p>
+                    <p class="mt-2 text-slate-300">The age of Scholasticism. <strong class="text-white">St. Anselm</strong> (ontological argument), <strong class="text-white">St. Augustine</strong> (argument by analogy), and <strong class="text-white">St. Thomas Aquinas</strong> (*Summa Theologica*) used reason to serve faith.</p>
                 </article>
                 <article class="card p-6 rounded-lg">
                     <h3 class="text-xl font-bold text-gold">Modern Period</h3>
-                    <p class="mt-2 text-slate-300">The era of epistemology. The central conflict was between <strong class="text-white">Rationalism</strong> (knowledge from reason) and <strong class="text-white">Empiricism</strong> (knowledge from experience).</p>
+                    <p class="mt-2 text-slate-300">The era of epistemology. <strong class="text-white">Rationalists (Descartes, Spinoza, Leibniz)</strong> clashed with <strong class="text-white">Empiricists (Locke)</strong>, a debate ultimately synthesized by <strong class="text-white">Kant</strong>.</p>
                 </article>
                 <article class="card p-6 rounded-lg">
                     <h3 class="text-xl font-bold text-gold">Contemporary Period</h3>
-                    <p class="mt-2 text-slate-300">Philosophy splits into two major traditions: the <strong class="text-white">Analytic</strong> (focused on logic and language) and the <strong class="text-white">Continental</strong> (focused on subjective experience).</p>
+                    <p class="mt-2 text-slate-300"><strong class="text-white">Analytic (Russell, Moore, Wittgenstein)</strong> focused on logic and language. <strong class="text-white">Continental (Existentialism, Phenomenology)</strong> focused on subjective experience and history.</p>
                 </article>
             </div>
         </section>
@@ -204,7 +207,7 @@
                 </div>
                 <div class="w-full md:w-1/3">
                     <h3 class="text-2xl font-bold text-white">A New Path Forward</h3>
-                    <p class="mt-2 text-slate-300"><strong class="text-blue-300">Rationalists</strong> like Plato argued we are born with knowledge. <strong class="text-amber-300">Empiricists</strong> like Locke said our minds are a blank slate. <strong class="text-gold">Immanuel Kant</strong> brilliantly merged them, stating that our minds have innate structures (reason) that organize the raw data from our senses (experience).</p>
+                    <p class="mt-2 text-slate-300"><strong class="text-blue-300">Rationalists</strong> like Descartes argued we are born with knowledge. <strong class="text-amber-300">Empiricists</strong> like Locke said our minds are a blank slate. <strong class="text-gold">Immanuel Kant</strong> brilliantly merged them, stating that our minds have innate structures (reason) that organize the raw data from our senses (experience).</p>
                 </div>
             </div>
         </section>
@@ -230,15 +233,15 @@
              <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                 <div class="card p-8 rounded-lg">
                     <h3 class="text-2xl font-bold text-gold">Loob</h3>
-                    <p class="text-slate-200 mt-2">The inner self; a holistic concept of one's core being and innate goodness.</p>
+                    <p class="text-slate-200 mt-2">A holistic sense of one's inner self (<span class="italic">kagandahang-loob, kabutihang-loob</span>). It emphasizes shared humanity and duties over rights.</p>
                 </div>
                 <div class="card p-8 rounded-lg">
-                    <h3 class="text-2xl font-bold text-gold">Bahala Na!</h3>
-                    <p class="text-slate-200 mt-2">A courageous faith. Trusting in a higher power after one has done their absolute best.</p>
+                    <h3 class="text-2xl font-bold text-gold">Bahala Na</h3>
+                    <p class="text-slate-200 mt-2">"Leave it to God (Bathala)." Not passive resignation, but a courageous trust in Divine Providence after one has done their best.</p>
                 </div>
                 <div class="card p-8 rounded-lg">
-                    <h3 class="text-2xl font-bold text-gold">Gulong ng Palad</h3>
-                    <p class="text-slate-200 mt-2">The "Wheel of Fortune." The belief that life is cyclical, with inevitable ups and downs.</p>
+                    <h3 class="text-2xl font-bold text-gold">Filipino Time & Optimism</h3>
+                    <p class="text-slate-200 mt-2">Belief in <span class="italic">Gulong ng Palad</span> (Wheel of Fortune) fosters an unmitigated optimism. "Filipino time" is not laziness, but a different cultural rhythm.</p>
                 </div>
             </div>
         </section>
@@ -246,12 +249,12 @@
         <section id="perspectives" class="my-20">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="card p-8 rounded-lg text-center">
-                     <h3 class="text-2xl font-bold text-white">Partial Perspective</h3>
-                     <p class="mt-2 text-slate-300">Viewing reality based on a single factor or context. Limited and subjective.</p>
+                     <h3 class="text-2xl font-bold text-white">Partial Point of View</h3>
+                     <p class="mt-2 text-slate-300">Looking at a situation using a single perspective or a limited set of factors. An incomplete picture.</p>
                 </div>
                  <div class="card p-8 rounded-lg text-center">
                      <h3 class="text-2xl font-bold text-white">Holistic Perspective</h3>
-                     <p class="mt-2 text-slate-300">Seeing the "big picture" by considering all aspects and their interconnections. Broader and more synthesized.</p>
+                     <p class="mt-2 text-slate-300">Seeing the "big picture" by understanding the connections between all parts of a whole. A more complete understanding.</p>
                 </div>
             </div>
         </section>
@@ -339,7 +342,7 @@
         new Chart(branchesCtx, {
             type: 'doughnut',
             data: {
-                labels: branchLabels.map(label => wrapText(label, 16)),
+                labels: branchLabels.map(label => wrapText(label, 20)),
                 datasets: [{
                     label: 'Branch of Philosophy',
                     data: [25, 25, 20, 15, 15],
