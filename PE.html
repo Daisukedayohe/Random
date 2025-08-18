@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PE Study Guide pero nag Relapse </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+        }
+        .nav-link.active {
+            color: #0d9488; /* teal-600 */
+            font-weight: 600;
+        }
+        .section-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top-width: 4px;
+        }
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.1);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #14b8a6, #22d3ee);
+        }
+    </style>
+</head>
+<body class="text-slate-700">
+
+    <!-- Header & Navigation -->
+    <header id="header" class="bg-white/90 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-cyan-500">PE Study Guide</h1>
+            <div class="hidden md:flex space-x-8">
+                <a href="#fitness" class="nav-link text-slate-600 hover:text-teal-500 transition-colors">Fitness</a>
+                <a href="#training" class="nav-link text-slate-600 hover:text-teal-500 transition-colors">Training</a>
+                <a href="#monitoring" class="nav-link text-slate-600 hover:text-teal-500 transition-colors">Monitoring</a>
+                <a href="#careers" class="nav-link text-slate-600 hover:text-teal-500 transition-colors">Careers</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-slate-600">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#fitness" class="block py-2 text-slate-600 hover:text-teal-500">Fitness Components</a>
+            <a href="#training" class="block py-2 text-slate-600 hover:text-teal-500">Training Principles</a>
+            <a href="#monitoring" class="block py-2 text-slate-600 hover:text-teal-500">Monitoring Effort</a>
+            <a href="#careers" class="block py-2 text-slate-600 hover:text-teal-500">Careers</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+
+        <!-- Hero Section -->
+        <section class="text-center mb-20 py-16 md:py-24 rounded-xl hero-gradient text-white">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Relapse Study Guide Pero PE</h2>
+            <p class="max-w-3xl mx-auto text-lg text-teal-100">
+                Master the core concepts of physical education, from understanding your body's fitness to designing workouts and exploring careers in health.
+            </p>
+        </section>
+
+        <!-- Section 1: Health-Related Fitness Components -->
+        <section id="fitness" class="mb-20 scroll-mt-20">
+            <h3 class="text-3xl font-bold text-slate-800 mb-2 text-center">Part 1: The 5 Components of Fitness</h3>
+            <p class="text-center text-teal-600 font-semibold text-lg mb-12">Understanding Your Physical Health</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="section-card p-6 border-teal-400 lg:col-span-2">
+                    <h4 class="text-xl font-semibold text-slate-800 mb-2">Body Composition (BMI)</h4>
+                    <p class="text-slate-600 mb-4">Refers to the percentage of fat, bone, and muscle in your body. Body Mass Index (BMI) is a common screening tool, calculated as `Weight (kg) / Height (m)²`.</p>
+                    <ul class="text-sm space-y-2">
+                        <li class="flex justify-between p-2 bg-slate-50 rounded-md"><span>Underweight:</span> <span class="font-semibold">&lt; 18.5</span></li>
+                        <li class="flex justify-between p-2 bg-slate-50 rounded-md"><span>Normal weight:</span> <span class="font-semibold">18.5 – 24.9</span></li>
+                        <li class="flex justify-between p-2 bg-slate-50 rounded-md"><span>Overweight:</span> <span class="font-semibold">25.0 – 29.9</span></li>
+                        <li class="flex justify-between p-2 bg-slate-50 rounded-md"><span>Obese:</span> <span class="font-semibold">≥ 30.0</span></li>
+                    </ul>
+                </div>
+                <div class="section-card p-6 border-teal-400">
+                    <h4 class="text-xl font-semibold text-slate-800 mb-2">Cardiovascular Endurance</h4>
+                    <p class="text-slate-600">The ability of your heart and lungs to supply oxygen to your body during sustained physical activity.</p>
+                </div>
+                <div class="section-card p-6 border-teal-400">
+                    <h4 class="text-xl font-semibold text-slate-800 mb-2">Muscular Strength</h4>
+                    <p class="text-slate-600">The maximum amount of force a muscle can produce in a single effort (e.g., lifting a heavy weight).</p>
+                </div>
+                <div class="section-card p-6 border-teal-400">
+                    <h4 class="text-xl font-semibold text-slate-800 mb-2">Muscular Endurance</h4>
+                    <p class="text-slate-600">The ability of the muscles to perform continuously without fatiguing over a period of time.</p>
+                </div>
+                <div class="section-card p-6 border-teal-400">
+                    <h4 class="text-xl font-semibold text-slate-800 mb-2">Flexibility</h4>
+                    <p class="text-slate-600">The ability of your joints to move through a full range of motion, which helps prevent injuries.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Principles of Exercise Training -->
+        <section id="training" class="mb-20 scroll-mt-20">
+            <h3 class="text-3xl font-bold text-slate-800 mb-2 text-center">Part 2: Designing Your Workout</h3>
+            <p class="text-center text-indigo-600 font-semibold text-lg mb-12">The FITT Principle & Core Training Concepts</p>
+            
+            <div class="section-card p-8 mb-12 border-indigo-400">
+                <h4 class="text-2xl font-semibold text-slate-800 mb-6">The FITT Principle</h4>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-indigo-50 p-4 rounded-lg"><h5 class="font-bold text-indigo-700">Frequency</h5><p>How often you exercise (e.g., 3-5 times a week).</p></div>
+                    <div class="bg-indigo-50 p-4 rounded-lg"><h5 class="font-bold text-indigo-700">Intensity</h5><p>How hard you exercise (e.g., light, moderate, vigorous).</p></div>
+                    <div class="bg-indigo-50 p-4 rounded-lg"><h5 class="font-bold text-indigo-700">Time</h5><p>How long you exercise (e.g., 30 minutes per session).</p></div>
+                    <div class="bg-indigo-50 p-4 rounded-lg"><h5 class="font-bold text-indigo-700">Type</h5><p>The specific kind of exercise you do (e.g., running, swimming, lifting).</p></div>
+                </div>
+            </div>
+
+            <div class="section-card p-8 border-indigo-400">
+                <h4 class="text-2xl font-semibold text-slate-800 mb-6">Key Principles of Exercise</h4>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <p><strong class="font-semibold text-indigo-800">Overload:</strong> To improve, you must consistently increase the stress on your body over time.</p>
+                    <p><strong class="font-semibold text-indigo-800">Progression:</strong> Start slowly and increase the amount and intensity of exercise gradually and safely.</p>
+                    <p><strong class="font-semibold text-indigo-800">Specificity:</strong> Your training should be relevant and appropriate to your specific goals.</p>
+                    <p><strong class="font-semibold text-indigo-800">Variety:</strong> Varying your workout prevents boredom, plateaus, and overuse injuries.</p>
+                    <p><strong class="font-semibold text-indigo-800">Rest & Recovery:</strong> Your body needs time to adapt and repair between workouts to get stronger.</p>
+                    <p><strong class="font-semibold text-indigo-800">Reversibility:</strong> Fitness gains are lost with inactivity. If you don't use it, you lose it!</p>
+                    <p><strong class="font-semibold text-indigo-800">Individuality:</strong> Everyone responds to exercise differently based on genetics, age, and experience.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Monitoring Your Effort -->
+        <section id="monitoring" class="mb-20 scroll-mt-20">
+            <h3 class="text-3xl font-bold text-slate-800 mb-2 text-center">Part 3: Monitoring Your Effort</h3>
+            <p class="text-center text-amber-600 font-semibold text-lg mb-12">Physiological Indicators of Exertion</p>
+            <div class="grid lg:grid-cols-5 gap-8">
+                <div class="lg:col-span-2 space-y-8">
+                    <div class="section-card p-6 border-amber-400"><h4 class="text-xl font-semibold text-slate-800 mb-2">Heart Rate (Pulse)</h4><p class="text-slate-600">The number of times your heart beats per minute. A higher heart rate indicates greater effort.</p></div>
+                    <div class="section-card p-6 border-amber-400"><h4 class="text-xl font-semibold text-slate-800 mb-2">Pacing</h4><p class="text-slate-600">The rate or speed at which you perform an activity. Proper pacing helps you manage your energy and complete your workout effectively.</p></div>
+                </div>
+                <div class="section-card p-8 lg:col-span-3 border-amber-400">
+                    <h4 class="text-xl font-semibold text-slate-800 mb-4">Rate of Perceived Exertion (RPE)</h4>
+                    <p class="text-slate-600 mb-4">A subjective measure of how hard you feel you're working, based on heart rate, breathing, and fatigue.</p>
+                    <ul class="text-sm space-y-1">
+                        <li class="flex items-center justify-between p-2 rounded-md"><span class="font-bold text-amber-700 w-8">6</span> <span class="flex-1">No exertion at all</span></li>
+                        <li class="flex items-center justify-between p-2 bg-amber-50 rounded-md"><span class="font-bold text-amber-700 w-8">7.5</span> <span class="flex-1">Extremely light</span></li>
+                        <li class="flex items-center justify-between p-2 rounded-md"><span class="font-bold text-amber-700 w-8">9</span> <span class="flex-1">Very light (e.g., gentle walk)</span></li>
+                        <li class="flex items-center justify-between p-2 bg-amber-50 rounded-md"><span class="font-bold text-amber-700 w-8">11</span> <span class="flex-1">Light</span></li>
+                        <li class="flex items-center justify-between p-2 rounded-md"><span class="font-bold text-amber-700 w-8">13</span> <span class="flex-1">Slightly hard, but manageable</span></li>
+                        <li class="flex items-center justify-between p-2 bg-amber-50 rounded-md"><span class="font-bold text-amber-700 w-8">15</span> <span class="flex-1">Hard</span></li>
+                        <li class="flex items-center justify-between p-2 rounded-md"><span class="font-bold text-amber-700 w-8">17</span> <span class="flex-1">Very hard</span></li>
+                        <li class="flex items-center justify-between p-2 bg-amber-50 rounded-md"><span class="font-bold text-amber-700 w-8">20</span> <span class="flex-1">Maximal exertion / Complete exhaustion</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Careers in Health & Fitness -->
+        <section id="careers" class="scroll-mt-20">
+            <h3 class="text-3xl font-bold text-slate-800 mb-2 text-center">Part 4: Careers in Health & Fitness</h3>
+            <p class="text-center text-rose-600 font-semibold text-lg mb-12">Turning Passion into a Profession</p>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="section-card p-6 border-rose-400 hover:bg-rose-50"><h5 class="font-semibold text-rose-700">Physical Education Teacher</h5><p class="text-sm text-slate-600">Educate students in physical fitness and health.</p></div>
+                <div class="section-card p-6 border-rose-400 hover:bg-rose-50"><h5 class="font-semibold text-rose-700">Sports Administration</h5><p class="text-sm text-slate-600">Manage the business side of sports teams or leagues.</p></div>
+                <div class="section-card p-6 border-rose-400 hover:bg-rose-50"><h5 class="font-semibold text-rose-700">Personal Trainer</h5><p class="text-sm text-slate-600">Provide one-on-one or group fitness instruction.</p></div>
+                <div class="section-card p-6 border-rose-400 hover:bg-rose-50"><h5 class="font-semibold text-rose-700">Coach</h5><p class="text-sm text-slate-600">Lead and train athletic teams to compete.</p></div>
+                <div class="section-card p-6 border-rose-400 hover:bg-rose-50"><h5 class="font-semibold text-rose-700">Sports Research</h5><p class="text-sm text-slate-600">Study and develop new knowledge in sports science.</p></div>
+                <div class="section-card p-6 border-rose-400 hover:bg-rose-50"><h5 class="font-semibold text-rose-700">Sports Psychologist</h5><p class="text-sm text-slate-600">Work with athletes on the mental aspects of performance.</p></div>
+                <div class="section-card p-6 border-rose-400 hover:bg-rose-50"><h5 class="font-semibold text-rose-700">Dietitian</h5><p class="text-sm text-slate-600">Provide expert nutrition consulting and create wellness programs.</p></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-slate-300 mt-16">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p>&copy; 2094 PE Study Guide. A comprehensive resource para sa batang bigo sa pag ibig.</p>
+        </div>
+    </footer>
+    
+    <!-- Scroll to Top Button -->
+    <button id="to-top-button" title="Go To Top" class="hidden fixed z-50 bottom-10 right-10 p-3 border-0 w-14 h-14 rounded-full shadow-md bg-teal-500 hover:bg-teal-600 text-white text-lg font-semibold transition-all duration-300">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" /></svg>
+    </button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+
+            const toTopButton = document.getElementById('to-top-button');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 200) { toTopButton.classList.remove('hidden'); } 
+                else { toTopButton.classList.add('hidden'); }
+            });
+            toTopButton.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href').substring(1) === entry.target.id) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, { rootMargin: "-30% 0px -70% 0px" });
+            sections.forEach(section => { observer.observe(section); });
+        });
+    </script>
+
+</body>
+</html>
