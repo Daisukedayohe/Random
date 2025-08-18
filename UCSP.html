@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earth Explorer's Field Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Kalam:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .kalam-font {
+            font-family: 'Kalam', cursive;
+        }
+        .card {
+            background-color: white;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .nav-link {
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #3b82f6;
+            transform: scale(1.05);
+        }
+        .hero-bg {
+            background-image: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.1)), url('https://placehold.co/1200x800/334155/e2e8f0?text=Explore+Earth');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="text-slate-700">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-md">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-slate-800 kalam-font">
+                🌍 Earth Explorer's Guide
+            </div>
+            <div class="hidden md:flex space-x-8 font-semibold">
+                <a href="#geology" class="nav-link">Geology</a>
+                <a href="#water" class="nav-link">Water</a>
+                <a href="#energy" class="nav-link">Energy</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg text-white py-20 md:py-32">
+        <div class="container mx-auto text-center px-6">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 kalam-font">Your Mission, Should You Choose to Accept It...</h1>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto">Is to uncover the secrets of our planet. This guide contains all the intel you need on rocks, water, and energy. Let the adventure begin!</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12 md:py-20">
+
+        <!-- Section 1: Geology -->
+        <section id="geology" class="mb-20">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 kalam-font text-slate-800">Chapter 1: The Ground Beneath Your Feet 🕵️‍♀️</h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center mb-12">
+                <div class="card p-8">
+                    <h3 class="text-2xl font-bold mb-4">The Core Mystery: Minerals vs. Rocks</h3>
+                    <p class="mb-4">Imagine you're building with LEGOs...</p>
+                    <div class="space-y-4">
+                        <p>💎 <span class="font-semibold">Minerals are the LEGO bricks.</span> They are single, pure ingredients with a specific recipe (chemical formula) and crystal structure. Key examples are <span class="font-semibold">Quartz, Feldspar, Mica, and Olivine.</span></p>
+                        <p>🏰 <span class="font-semibold">Rocks are the finished LEGO castle.</span> They are a solid mix of one or more minerals all stuck together. Example: Granite.</p>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <img src="https://placehold.co/500x300/a5b4fc/312e81?text=Mineral+vs+Rock" alt="Mineral vs Rock Analogy" class="rounded-lg shadow-lg mx-auto" onerror="this.onerror=null;this.src='https://placehold.co/500x300/cccccc/333333?text=Image+Not+Found';">
+                </div>
+            </div>
+
+            <div class="card p-8 mb-12">
+                <h3 class="text-2xl font-bold mb-4 text-center">The Rock Cycle: Earth's Never-Ending Story</h3>
+                <p class="text-center mb-8 max-w-2xl mx-auto">Rocks are always changing! They can be born from fire, squished into layers, or totally transformed by heat and pressure. This is the Rock Cycle, and every rock belongs to one of three families.</p>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Igneous Rocks -->
+                    <div class="text-center p-6 bg-red-50 rounded-lg">
+                        <h4 class="text-xl font-bold mb-2 kalam-font text-red-600">🔥 The "Fire Rocks" (Igneous)</h4>
+                        <p>Born from cooled magma or lava. Their secret is how fast they cool!</p>
+                        <ul class="text-left mt-4 space-y-2 list-disc list-inside">
+                            <li><span class="font-semibold">Intrusive:</span> Cools SLOWLY underground, forming big, visible crystals (e.g., Granite).</li>
+                            <li><span class="font-semibold">Extrusive:</span> Cools FAST on the surface, forming tiny crystals (e.g., Basalt).</li>
+                        </ul>
+                    </div>
+                    <!-- Sedimentary Rocks -->
+                    <div class="text-center p-6 bg-yellow-50 rounded-lg">
+                        <h4 class="text-xl font-bold mb-2 kalam-font text-yellow-600">🥪 The "Layer Rocks" (Sedimentary)</h4>
+                        <p>Made from bits of sand, shells, and other rocks squished together over millions of years.</p>
+                         <ul class="text-left mt-4 space-y-2 list-disc list-inside">
+                            <li>They often have visible layers.</li>
+                            <li>The ONLY rock family where you can find <span class="font-semibold">fossils</span>! (e.g., Sandstone, Limestone, Coal).</li>
+                        </ul>
+                    </div>
+                    <!-- Metamorphic Rocks -->
+                    <div class="text-center p-6 bg-blue-50 rounded-lg">
+                        <h4 class="text-xl font-bold mb-2 kalam-font text-blue-600">🦸‍♂️ The "Shape-shifters" (Metamorphic)</h4>
+                        <p>Existing rocks that get a total makeover from intense heat and pressure deep underground.</p>
+                         <ul class="text-left mt-4 space-y-2 list-disc list-inside">
+                            <li>They are transformed into a completely new, often harder, rock.</li>
+                            <li>Example: Limestone gets squeezed into beautiful <span class="font-semibold">Marble</span>.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card p-8">
+                <h3 class="text-2xl font-bold mb-4 text-center">Advanced Intel: Geology Detective Kit</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">Mineral ID & Formation</h4>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><strong>Luster:</strong> How shiny is it? (Metallic, glassy)</li>
+                            <li><strong>Streak:</strong> The color of its powder.</li>
+                            <li><strong>Hardness:</strong> What can it scratch? (Mohs Scale)</li>
+                            <li><strong>Origin:</strong> Formed from cooling magma or from minerals precipitating out of water.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">Rock Sub-Types & Examples</h4>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><strong>Igneous:</strong> Felsic (light) vs. Mafic (dark).</li>
+                            <li><strong>Sedimentary:</strong> Clastic (Sandstone), Chemical (Gypsum), or Organic (Coal, Chalk).</li>
+                            <li><strong>Metamorphic:</strong> Foliated/layered (Slate, Schist) vs. Non-Foliated (Marble, Quartzite).</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">Why Rocks Matter</h4>
+                        <p>They are more than just stones! They help us understand Earth's history, provide essential resources for industry, and hold cultural and scientific significance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Water -->
+        <section id="water" class="mb-20">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 kalam-font text-slate-800">Chapter 2: The Planet's Lifeblood 💧</h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center mb-12">
+                 <div class="text-center">
+                    <img src="https://placehold.co/500x300/67e8f9/0e7490?text=Water+Cycle" alt="Water Cycle Diagram" class="rounded-lg shadow-lg mx-auto" onerror="this.onerror=null;this.src='https://placehold.co/500x300/cccccc/333333?text=Image+Not+Found';">
+                </div>
+                <div class="card p-8">
+                    <h3 class="text-2xl font-bold mb-4">Earth's Great Recycling Program</h3>
+                    <p class="mb-4">Water is always on the move in a giant loop called the Water Cycle. It exists in three states: <span class="font-semibold">Solid (Ice), Liquid (Water), and Gas (Vapor).</span></p>
+                    <ol class="list-decimal list-inside space-y-2 font-semibold">
+                        <li><span class="font-bold">Evaporation & Transpiration:</span> The sun heats water, turning it to vapor. Plants also release vapor!</li>
+                        <li><span class="font-bold">Condensation:</span> The vapor gets cold high up and turns back into liquid droplets, forming clouds.</li>
+                        <li><span class="font-bold">Precipitation:</span> Clouds get heavy and release water as rain, snow, or hail.</li>
+                        <li><span class="font-bold">Collection:</span> Water gathers in oceans, rivers, lakes, reservoirs, or underground.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="card p-8">
+                 <h3 class="text-2xl font-bold mb-4 text-center">Advanced Intel: Water Mission Briefing</h3>
+                 <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">The Water Situation</h4>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li><strong>71%</strong> of Earth is covered in water.</li>
+                            <li>But <strong>97.5%</strong> of it is undrinkable saltwater.</li>
+                            <li>Of the tiny <strong>2.5%</strong> of freshwater, most is frozen in glaciers!</li>
+                            <li>This makes the freshwater in lakes, rivers, and groundwater incredibly rare and valuable.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">Human Impact Alerts</h4>
+                         <ul class="list-disc list-inside space-y-1">
+                            <li><strong>Deforestation:</strong> Fewer trees mean more runoff, causing floods and soil loss.</li>
+                            <li><strong>Urbanization:</strong> Concrete cities prevent rain from soaking into the ground, increasing flood risk.</li>
+                            <li><strong>Pollution:</strong> Waste can contaminate our limited freshwater sources, as seen in real-world cases like the water scarcity issues in the Philippines.</li>
+                        </ul>
+                    </div>
+                 </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Energy -->
+        <section id="energy">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 kalam-font text-slate-800">Chapter 3: Powering Our World ⚡</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Non-Renewable -->
+                <div class="card p-8 border-t-4 border-slate-500">
+                    <h3 class="text-2xl font-bold mb-4">Team Non-Renewable</h3>
+                    <p class="mb-4">This is energy from sources that will eventually run out. Think of it like a limited snack pack.</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><strong>Sources:</strong> Fossil fuels like oil, coal, and natural gas.</li>
+                        <li><strong>Problem:</strong> They took millions of years to form. Once they're gone, they're gone. Burning them also causes pollution and climate change.</li>
+                    </ul>
+                </div>
+                <!-- Renewable -->
+                <div class="card p-8 border-t-4 border-green-500">
+                    <h3 class="text-2xl font-bold mb-4">Team Renewable</h3>
+                    <p class="mb-4">This is energy from sources that won't run out. It's like a snack pack that magically refills itself!</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><strong>Sources:</strong> Sun (solar), wind, moving water (hydro), and Earth's heat (geothermal).</li>
+                        <li><strong>Benefit:</strong> They are clean, produce no greenhouse gases, and help protect our planet.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card p-8 mt-12">
+                <h3 class="text-2xl font-bold mb-4 text-center">Advanced Intel: The Future of Energy</h3>
+                <p class="text-center mb-8 max-w-2xl mx-auto">Switching to 100% renewable energy is a huge mission with big challenges, but scientists are working on amazing solutions.</p>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">The Challenge: Intermittency & Transport</h4>
+                        <p>What do we do when the sun isn't shining? And how do we power big things like airplanes and ships? Storing energy in better batteries and finding renewable liquid fuels are top priorities.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-2">The Solution: Super-Highways for Power</h4>
+                        <p>Energy is often generated far from cities. We need better ways to move it. Scientists are developing futuristic tech like <span class="font-semibold">superconductors</span>—special power lines that can transport electricity over vast distances with almost no energy loss.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-white mt-20">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p class="kalam-font text-xl">Mission Debrief Complete.</p>
+            <p>You now have the essential knowledge to be a true Earth Explorer. Keep observing, keep questioning, and keep protecting our amazing planet!</p>
+        </div>
+    </footer>
+
+</body>
+</html>
