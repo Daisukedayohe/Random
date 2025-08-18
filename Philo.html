@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philosophy Midterm Study Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* gray-100 */
+        }
+        .nav-link.active {
+            color: #4f46e5; /* indigo-600 */
+            font-weight: 600;
+        }
+        .section-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top-width: 4px;
+        }
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.1);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #4f46e5, #7c3aed, #c026d3);
+        }
+    </style>
+</head>
+<body class="text-slate-700">
+
+    <!-- Header & Navigation -->
+    <header id="header" class="bg-white/90 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">Philo Study Guide</h1>
+            <div class="hidden md:flex space-x-6">
+                <a href="#spirit" class="nav-link text-slate-600 hover:text-indigo-600 transition-colors">Embodied Spirit</a>
+                <a href="#transcendence" class="nav-link text-slate-600 hover:text-indigo-600 transition-colors">Transcendence</a>
+                <a href="#will" class="nav-link text-slate-600 hover:text-indigo-600 transition-colors">Will & Love</a>
+                <a href="#environment" class="nav-link text-slate-600 hover:text-indigo-600 transition-colors">Environment</a>
+                <a href="#terms" class="nav-link text-slate-600 hover:text-indigo-600 transition-colors">Key Terms</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-slate-600">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#spirit" class="block py-2 text-slate-600 hover:text-indigo-600">Embodied Spirit</a>
+            <a href="#transcendence" class="block py-2 text-slate-600 hover:text-indigo-600">Transcendence</a>
+            <a href="#will" class="block py-2 text-slate-600 hover:text-indigo-600">Will & Love</a>
+            <a href="#environment" class="block py-2 text-slate-600 hover:text-indigo-600">Environment</a>
+            <a href="#terms" class="block py-2 text-slate-600 hover:text-indigo-600">Key Terms</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+
+        <!-- Hero Section -->
+        <section class="text-center mb-20 py-16 md:py-24 rounded-xl hero-gradient text-white">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-4">An Introduction to Philosophy</h2>
+            <p class="max-w-3xl mx-auto text-lg text-indigo-100">
+                Para sa lahat ng mga "What if" nga gi send ni Gerald sa ako.
+            </p>
+        </section>
+
+        <!-- Section 1: Human Person as an Embodied Spirit -->
+        <section id="spirit" class="mb-20 scroll-mt-20">
+            <h3 class="text-3xl font-bold text-slate-800 mb-2 text-center">The Human Person as an Embodied Spirit</h3>
+            <p class="text-center text-indigo-600 font-semibold text-lg mb-12">Understanding the Union of Body and Soul</p>
+            <div class="section-card p-8 border-indigo-500">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-xl font-semibold text-slate-800 mb-3">Core Concepts</h4>
+                        <ul class="space-y-4">
+                            <li><strong class="text-indigo-700">Embodied Human Person:</strong> A being where mind and body are one, living with limitations (immanence) but able to go beyond them (transcendence).</li>
+                            <li><strong class="text-indigo-700">Embodiment:</strong> The state of being alive in a physical body, which is essential to all human experience.</li>
+                            <li><strong class="text-indigo-700">"I am my body" (Marcel):</strong> The body is not something we possess, but an inseparable part of our identity.</li>
+                            <li><strong class="text-indigo-700">Phenomenological View (Heidegger):</strong> The body is a lived experience, not just a biological object.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-semibold text-slate-800 mb-3">Views on the Soul</h4>
+                        <ul class="space-y-4">
+                            <li><strong class="text-indigo-700">Aristotle:</strong> The soul is the "form" of the body, the principle of life that enables nutrition, sensation, movement, and thought.</li>
+                            <li><strong class="text-indigo-700">St. Thomas Aquinas:</strong> The soul is an incorporeal, subsistent (exists in itself), and incorruptible (cannot be destroyed) principle that animates the body.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Limitations and Possibilities for Transcendence -->
+        <section id="transcendence" class="mb-20 scroll-mt-20">
+            <h3 class="text-3xl font-bold text-slate-800 mb-2 text-center">Limitations & Possibilities for Transcendence</h3>
+            <p class="text-center text-purple-600 font-semibold text-lg mb-12">Going Beyond Our Limits</p>
+            <div class="grid lg:grid-cols-3 gap-8 mb-8">
+                <div class="section-card p-6 border-purple-500">
+                    <h4 class="text-xl font-semibold text-slate-800 mb-2">Immanence vs. Transcendence</h4>
+                    <p class="text-sm"><strong class="text-purple-700">Immanence:</strong> Existing within the bounds of the world and human experience.</p>
+                    <p class="text-sm mt-2"><strong class="text-purple-700">Transcendence:</strong> The capacity to go beyond current limitations toward greater possibilities.</p>
+                </div>
+                <div class="section-card p-6 border-purple-500 lg:col-span-2">
+                    <h4 class="text-xl font-semibold text-slate-800 mb-2">Philosophical Views on Immanence</h4>
+                    <ul class="text-sm space-y-2">
+                        <li><strong class="text-purple-700">Plato:</strong> A particular object (a specific dog) is an instance of a universal form (the idea of "dog").</li>
+                        <li><strong class="text-purple-700">Kant:</strong> What is within the limits of human cognition and understanding.</li>
+                        <li><strong class="text-purple-700">Husserl:</strong> Anything present in one's immediate consciousness or awareness.</li>
+                    </ul>
+                </div>
+            </div>
+             <div class="section-card p-8 border-purple-500">
+                <h4 class="text-xl font-semibold text-slate-800 mb-4 text-center">Pathways to Transcendence</h4>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div><h5 class="font-semibold text-purple-700">Will to Power (Nietzsche)</h5><p class="text-sm">The inner drive to overcome challenges.</p></div>
+                    <div><h5 class="font-semibold text-purple-700">Forgiveness</h5><p class="text-sm">Letting go of anger to achieve inner freedom.</p></div>
+                    <div><h5 class="font-semibold text-purple-700">Vulnerability</h5><p class="text-sm">Accepting dependence on others.</p></div>
+                    <div><h5 class="font-semibold text-purple-700">Failure</h5><p class="text-sm">Using shortcomings as opportunities for growth.</p></div>
+                    <div><h5 class="font-semibold text-purple-700">Loneliness</h5><p class="text-sm">Can lead to freedom from unhealthy dependencies.</p></div>
+                    <div><h5 class="font-semibold text-purple-700">Love</h5><p class="text-sm">A deep connection that transcends the self.</p></div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section 3: St. Augustine & St. Thomas Aquinas on Will and Love -->
+        <section id="will" class="mb-20 scroll-mt-20">
+            <h3 class="text-3xl font-bold text-slate-800 mb-2 text-center">St. Augustine & St. Thomas Aquinas</h3>
+            <p class="text-center text-rose-600 font-semibold text-lg mb-12">On Will and Love</p>
+            <div class="section-card p-8 border-rose-500">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div><h5 class="font-semibold text-rose-700">Eternal Law (St. Augustine)</h5><p>God's divine law that commands all beings to do good and avoid evil, forming the ultimate basis of moral obligation.</p></div>
+                    <div><h5 class="font-semibold text-rose-700">Moral Freedom</h5><p>Humans have the physical freedom to act, but also the moral responsibility to use that freedom to choose what is right and good.</p></div>
+                    <div><h5 class="font-semibold text-rose-700">Chastity</h5><p>A virtue of purity and holiness that is required of all people, regardless of their state in life (single or married), as a form of love and respect.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: The Human Person and the Environment -->
+        <section id="environment" class="mb-20 scroll-mt-20">
+            <h3 class="text-3xl font-bold text-slate-800 mb-2 text-center">The Human Person and the Environment</h3>
+            <p class="text-center text-emerald-600 font-semibold text-lg mb-12">Philosophical Approaches to Ecology</p>
+            <div class="grid lg:grid-cols-2 gap-8">
+                <div class="section-card p-8 border-emerald-500">
+                    <h4 class="text-xl font-semibold text-slate-800 mb-4">Human Approaches to the Environment</h4>
+                    <ul class="space-y-4">
+                        <li><strong class="text-emerald-700">Instrumental:</strong> Protecting nature only for human benefit.</li>
+                        <li><strong class="text-emerald-700">Axiological:</strong> Recognizing nature's intrinsic, independent value.</li>
+                        <li><strong class="text-emerald-700">Anthropological:</strong> Viewing nature as an object for human manipulation.</li>
+                        <li><strong class="text-emerald-700">Utilitarianism:</strong> Actions are right if they produce the greatest good for the greatest number.</li>
+                        <li><strong class="text-emerald-700">Natural Law Ethics:</strong> Nature is inherently good as God's creation, and we must care for it.</li>
+                        <li><strong class="text-emerald-700">Virtue Ethics:</strong> Developing virtues like care and respect for the environment.</li>
+                    </ul>
+                </div>
+                <div class="section-card p-8 border-emerald-500">
+                    <h4 class="text-xl font-semibold text-slate-800 mb-4">Ethical Frameworks</h4>
+                    <ul class="space-y-4">
+                        <li><strong class="text-emerald-700">Stewardship (P. Dobel):</strong> Humans are caretakers, not masters, of the Earth.</li>
+                        <li><strong class="text-emerald-700">Land Ethics (A. Leopold):</strong> Humans are members, not conquerors, of the land-community.</li>
+                        <li><strong class="text-emerald-700">Biocentric Egalitarianism (P. Taylor):</strong> A life-centered view where all living things have equal moral worth.</li>
+                    </ul>
+                </div>
+                <div class="section-card p-8 border-emerald-500 lg:col-span-2">
+                    <h4 class="text-xl font-semibold text-slate-800 mb-4">The Biocentric Outlook (Four Components)</h4>
+                     <ol class="list-decimal list-inside space-y-2 text-slate-600">
+                        <li>Humans are equal members of Earth's community of life.</li>
+                        <li>Earth's ecosystems are interconnected and interdependent.</li>
+                        <li>Each organism pursues its own good in its own way.</li>
+                        <li>Human superiority is a groundless claim.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Key Philosophical Terms -->
+        <section id="terms" class="scroll-mt-20">
+            <h3 class="text-3xl font-bold text-slate-800 mb-2 text-center">Key Philosophical Terms</h3>
+            <p class="text-center text-slate-500 font-semibold text-lg mb-12">A Quick Glossary</p>
+            <div class="section-card p-8 border-slate-500">
+                <div class="columns-2 md:columns-3 lg:columns-4 gap-8">
+                    <div class="mb-4 break-inside-avoid"><strong class="font-semibold text-slate-800">Anthropocentrism:</strong> Human-centered worldview.</div>
+                    <div class="mb-4 break-inside-avoid"><strong class="font-semibold text-slate-800">Axiological Approach:</strong> Valuing nature for its own sake.</div>
+                    <div class="mb-4 break-inside-avoid"><strong class="font-semibold text-slate-800">Biocentric Egalitarianism:</strong> Belief that all living things have equal moral worth.</div>
+                    <div class="mb-4 break-inside-avoid"><strong class="font-semibold text-slate-800">Biocentric Outlook:</strong> A life-centered perspective on the world.</div>
+                    <div class="mb-4 break-inside-avoid"><strong class="font-semibold text-slate-800">Chastity:</strong> A virtue of purity and holiness.</div>
+                    <div class="mb-4 break-inside-avoid"><strong class="font-semibold text-slate-800">Contact of Power:</strong> Interaction between two physical bodies.</div>
+                    <div class="mb-4 break-inside-avoid"><strong class="font-semibold text-slate-800">Contact of Quality:</strong> Interaction between material and immaterial (e.g., soul and body).</div>
+                    <div class="mb-4 break-inside-avoid"><strong class="font-semibold text-slate-800">Ecological Conscience:</strong> Awareness and responsibility for nature's health.</div>
+                    <div class="mb-4 break-inside-avoid"><strong class="font-semibold text-slate-800">Ecological Land Ethics:</strong> Viewing humans as members of the land-community.</div>
+                    <div class="mb-4 break-inside-avoid"><strong class="font-semibold text-slate-800">Embodied Human Person:</strong> A being where mind and body are one.</div>
+                    <div class="mb-4 break-inside-avoid"><strong class="font-semibold text-slate-800">Embodiment:</strong> The state of living in a physical body.</div>
+                    <div class="mb-4 break-inside-avoid"><strong class="font-semibold text-slate-800">Environmental Crisis:</strong> Critical damage to the environment threatening life.</div>
+                    <div class="mb-4 break-inside-avoid"><strong class="font-semibold text-slate-800">Eternal Law:</strong> God's law to do good and avoid evil.</div>
+                    <div class="mb-4 break-inside-avoid"><strong class="font-semibold text-slate-800">Humility in Ecology:</strong> Recognizing humanity's equality with other life forms.</div>
+                    <div class="mb-4 break-inside-avoid"><strong class="font-semibold text-slate-800">Immanence:</strong> Existing within the limits of the world or consciousness.</div>
+                    <div class="mb-4 break-inside-avoid"><strong class="font-semibold text-slate-800">Incorruptible Soul:</strong> A soul that cannot be destroyed.</div>
+                    <div class="mb-4 break-inside-avoid"><strong class="font-semibold text-slate-800">Instrumental Worth:</strong> The value of nature based on its usefulness to humans.</div>
+                    <div class="mb-4 break-inside-avoid"><strong class="font-semibold text-slate-800">Intrinsic Value of Nature:</strong> Nature is valuable in itself.</div>
+                    <div class="mb-4 break-inside-avoid"><strong class="font-semibold text-slate-800">Moral Freedom:</strong> The freedom to act, with the responsibility to choose what is right.</div>
+                    <div class="mb-4 break-inside-avoid"><strong class="font-semibold text-slate-800">Natural Law Ethics:</strong> Belief that nature is inherently good as God's creation.</div>
+                    <div class="mb-4 break-inside-avoid"><strong class="font-semibold text-slate-800">Phenomenological View:</strong> Seeing the body as a lived experience, not just an object.</div>
+                    <div class="mb-4 break-inside-avoid"><strong class="font-semibold text-slate-800">Principle of Intrinsic Value:</strong> Each member of the community of life has value in itself.</div>
+                    <div class="mb-4 break-inside-avoid"><strong class="font-semibold text-slate-800">Principle of Moral Consideration:</strong> All wild living things deserve concern.</div>
+                    <div class="mb-4 break-inside-avoid"><strong class="font-semibold text-slate-800">Soul:</strong> The principle of life that animates the body.</div>
+                    <div class="mb-4 break-inside-avoid"><strong class="font-semibold text-slate-800">Subsistent Soul:</strong> A soul that can exist independently of the body.</div>
+                    <div class="mb-4 break-inside-avoid"><strong class="font-semibold text-slate-800">Transcendence:</strong> The capacity to go beyond one's limitations.</div>
+                    <div class="mb-4 break-inside-avoid"><strong class="font-semibold text-slate-800">Utilitarianism:</strong> Actions are right if they produce the greatest happiness for the greatest number.</div>
+                    <div class="mb-4 break-inside-avoid"><strong class="font-semibold text-slate-800">Virtue Ethics Perspective:</strong> Emphasizes developing virtues like care and respect for the environment.</div>
+                    <div class="mb-4 break-inside-avoid"><strong class="font-semibold text-slate-800">Will to Power:</strong> The drive to overcome oneself and life's challenges.</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-slate-300 mt-16">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p>&copy; 2024 Philosophy Study Guide. A resource for batang ga jalosi.</p>
+        </div>
+    </footer>
+    
+    <!-- Scroll to Top Button -->
+    <button id="to-top-button" title="Go To Top" class="hidden fixed z-50 bottom-10 right-10 p-3 border-0 w-14 h-14 rounded-full shadow-md bg-indigo-500 hover:bg-indigo-600 text-white text-lg font-semibold transition-all duration-300">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" /></svg>
+    </button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+
+            const toTopButton = document.getElementById('to-top-button');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 200) { toTopButton.classList.remove('hidden'); } 
+                else { toTopButton.classList.add('hidden'); }
+            });
+            toTopButton.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href').substring(1) === entry.target.id) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, { rootMargin: "-30% 0px -70% 0px" });
+            sections.forEach(section => { observer.observe(section); });
+        });
+    </script>
+
+</body>
+</html>
