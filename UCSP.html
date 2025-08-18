@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UCSP Comprehensive Study Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f5f9; /* slate-100 */
+        }
+        .nav-link.active {
+            color: #3b82f6; /* blue-500 */
+            font-weight: 600;
+        }
+        .section-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px_6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top-width: 4px;
+        }
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.1);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #3b82f6, #6366f1, #8b5cf6);
+        }
+        .brain-part-card {
+            background-color: #f8fafc; /* slate-50 */
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            border-left-width: 4px;
+        }
+    </style>
+</head>
+<body class="text-slate-700">
+
+    <!-- Header & Navigation -->
+    <header id="header" class="bg-white/90 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-500">UCSP Study Guide Para sa Mga Labubu</h1>
+            <div class="hidden md:flex space-x-8">
+                <a href="#sociobio" class="nav-link text-slate-600 hover:text-blue-500 transition-colors">Sociobiological</a>
+                <a href="#sociocult" class="nav-link text-slate-600 hover:text-blue-500 transition-colors">Sociocultural</a>
+                <a href="#socialorg" class="nav-link text-slate-600 hover:text-blue-500 transition-colors">Social Structures</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-slate-600">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#sociobio" class="block py-2 text-slate-600 hover:text-blue-500">Sociobiological Evolution</a>
+            <a href="#sociocult" class="block py-2 text-slate-600 hover:text-blue-500">Sociocultural Evolution</a>
+            <a href="#socialorg" class="block py-2 text-slate-600 hover:text-blue-500">Social Structures</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+
+        <!-- Hero Section -->
+        <section class="text-center mb-20 py-16 md:py-24 rounded-xl hero-gradient text-white">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-4">From Biology to Society</h2>
+            <p class="max-w-3xl mx-auto text-lg text-slate-200">
+                Explore the incredible journey of human development, from the biological evolution that shaped our bodies and minds to the complex social structures we create and live in.
+            </p>
+        </section>
+
+        <!-- Section 1: Sociobiological Evolution -->
+        <section id="sociobio" class="mb-20 scroll-mt-20">
+            <h3 class="text-3xl font-bold text-slate-800 mb-2 text-center">Part 1: The Foundation of Humanity</h3>
+            <p class="text-center text-blue-600 font-semibold text-lg mb-12">Sociobiological Evolution</p>
+
+            <!-- Detailed Brain Section -->
+            <div class="section-card p-8 mb-12 border-blue-400">
+                <h4 class="text-2xl font-semibold text-slate-800 mb-2">The Command Center: The Human Brain</h4>
+                <p class="mb-8 text-slate-600">Our advanced thinking capacity is the primary driver of human culture and innovation. It stems from the complex structure of our brain, which is composed of several key parts.</p>
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <!-- Cerebrum -->
+                    <div class="brain-part-card border-blue-300">
+                        <div class="flex items-center mb-3">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.311a15.045 15.045 0 01-7.5 0C4.508 19.64 2.25 15.223 2.25 10.5c0-4.724 2.258-9.14 6-11.392m1.5 14.382a6.01 6.01 0 01-1.5-.189m1.5.189a6.01 6.01 0 001.5-.189m-1.5 3.75a6.01 6.01 0 01-1.5-.189m1.5.189a6.01 6.01 0 001.5-.189m-9.75 1.5a12.06 12.06 0 014.5 0m-4.5 0a12.06 12.06 0 00-4.5 0m11.25 0a15.045 15.045 0 017.5 0c3.742 2.252 6 6.67 6 11.392c0 4.724-2.258 9.14-6 11.392m-1.5-14.382a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189" /></svg>
+                            </div>
+                            <h5 class="text-lg font-bold text-slate-800">Cerebrum (Frontal Lobe)</h5>
+                        </div>
+                        <p class="text-sm text-slate-600">The largest part, responsible for higher-level functions like judgment, reasoning, problem-solving, emotions, learning, movement, and processing sensory information (touch, vision, hearing).</p>
+                    </div>
+                    <!-- Brainstem -->
+                    <div class="brain-part-card border-blue-300">
+                        <div class="flex items-center mb-3">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" /></svg>
+                            </div>
+                            <h5 class="text-lg font-bold text-slate-800">Brainstem</h5>
+                        </div>
+                        <p class="text-sm text-slate-600">Connects the brain to the rest of the body. It controls vital functions such as breathing, consciousness, heart rate, swallowing, and sensory relays.</p>
+                    </div>
+                    <!-- Cerebellum -->
+                    <div class="brain-part-card border-blue-300">
+                        <div class="flex items-center mb-3">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" /></svg>
+                            </div>
+                            <h5 class="text-lg font-bold text-slate-800">Cerebellum</h5>
+                        </div>
+                        <p class="text-sm text-slate-600">Contains a high density of nerve cells and is crucial for coordinating fine motor movements, muscle control, and maintaining balance.</p>
+                    </div>
+                </div>
+                <div class="bg-blue-50 text-blue-800 p-4 rounded-lg text-center">
+                    <p><strong class="font-bold">Fun Fact:</strong> The human brain weighs about 1.4 kg and contains around 16.3 billion neurons, making it an incredibly complex and powerful organ.</p>
+                </div>
+            </div>
+
+            <!-- Other Capacities -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="section-card p-6 border-blue-400">
+                    <h4 class="text-xl font-semibold text-slate-800 mb-2">Speaking Capacity</h4>
+                    <p class="text-slate-600">A lowered larynx and developed vocal tract give humans the unique ability to produce a wide range of sounds, enabling complex language.</p>
+                </div>
+                <div class="section-card p-6 border-blue-400">
+                    <h4 class="text-xl font-semibold text-slate-800 mb-2">Gripping Capacity</h4>
+                    <p class="text-slate-600">Opposable thumbs allow for both a <span class="font-semibold">power grip</span> and a <span class="font-semibold">precision grip</span>, crucial for tool making and use.</p>
+                </div>
+                <div class="section-card p-6 border-blue-400">
+                    <h4 class="text-xl font-semibold text-slate-800 mb-2">Walking/Standing Capacity</h4>
+                    <p class="text-slate-600">Bipedalism freed our hands for carrying and tool use, and provided greater mobility and vision over distances.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Sociocultural & Sociopolitical Evolution -->
+        <section id="sociocult" class="mb-20 scroll-mt-20">
+            <h3 class="text-3xl font-bold text-slate-800 mb-2 text-center">Part 2: The Rise of Culture & Civilization</h3>
+            <p class="text-center text-indigo-600 font-semibold text-lg mb-12">Sociocultural Evolution</p>
+
+            <!-- Stone Age -->
+            <div class="section-card p-8 mb-12 border-indigo-400">
+                <h4 class="text-2xl font-semibold text-slate-800 mb-6">The Stone Age: Tools Define an Era</h4>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div>
+                        <h5 class="font-bold text-indigo-600 mb-2">Paleolithic Period (Old Stone Age)</h5>
+                        <p>Characterized by simple stone tools (like the Oldowan Industry), hunting, and gathering. Humans lived in small, nomadic groups.</p>
+                    </div>
+                    <div>
+                        <h5 class="font-bold text-indigo-600 mb-2">Mesolithic Period (Middle Stone Age)</h5>
+                        <p>Development of more sophisticated and smaller tools. Still primarily a hunter-gatherer lifestyle, but with adaptations to new environments.</p>
+                    </div>
+                    <div>
+                        <h5 class="font-bold text-indigo-600 mb-2">Neolithic Period (New Stone Age)</h5>
+                        <p>The agricultural revolution. Humans began farming, domesticating animals, and forming permanent settlements. This shift laid the groundwork for civilization.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Civilization -->
+            <div class="section-card p-8 border-indigo-400">
+                <h4 class="text-2xl font-semibold text-slate-800 mb-6">The Dawn of Civilization</h4>
+                <p class="mb-8">The first civilizations, like Mesopotamia in the Fertile Crescent, emerged as societies grew larger and more complex. They shared several key characteristics:</p>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-slate-50 p-4 rounded-lg border-l-4 border-indigo-300">
+                        <h5 class="font-semibold mb-1">1. Rise of Agriculture</h5>
+                        <p class="text-sm">Advanced farming techniques and irrigation created food surpluses, allowing populations to grow.</p>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-lg border-l-4 border-indigo-300">
+                        <h5 class="font-semibold mb-1">2. Diversification of Labor</h5>
+                        <p class="text-sm">With enough food, people could specialize in other jobs like artisans, merchants, and priests.</p>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-lg border-l-4 border-indigo-300">
+                        <h5 class="font-semibold mb-1">3. Social Stratification</h5>
+                        <p class="text-sm">Societies became organized into social classes or hierarchies based on wealth, power, and occupation.</p>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-lg border-l-4 border-indigo-300">
+                        <h5 class="font-semibold mb-1">4. Central Government</h5>
+                        <p class="text-sm">Leaders and governing bodies emerged to manage resources, create laws, and organize large-scale projects.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Social Organizations & Structures -->
+        <section id="socialorg" class="scroll-mt-20">
+            <h3 class="text-3xl font-bold text-slate-800 mb-2 text-center">Part 3: Understanding Our Social World</h3>
+            <p class="text-center text-purple-600 font-semibold text-lg mb-12">Social Organizations & Structures</p>
+            
+            <!-- Statuses and Roles -->
+            <div class="section-card p-8 mb-12 border-purple-400">
+                <h4 class="text-2xl font-semibold text-slate-800 mb-6">Statuses and Roles: Who We Are & What We Do</h4>
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div>
+                        <h5 class="text-lg font-semibold mb-2">Social Status</h5>
+                        <p class="mb-4">A socially defined position in a group. Everyone holds multiple statuses.</p>
+                        <div class="bg-slate-50 p-4 rounded-lg mb-3 border-l-4 border-purple-300">
+                            <h6 class="font-bold">Ascribed Status</h6>
+                            <p>Assigned at birth or involuntarily later in life (e.g., race, gender, daughter).</p>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-lg border-l-4 border-purple-300">
+                            <h6 class="font-bold">Achieved Status</h6>
+                            <p>Acquired through personal effort, skills, and choices (e.g., student, athlete, friend).</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h5 class="text-lg font-semibold mb-2">Social Roles</h5>
+                        <p class="mb-4">The set of behaviors and expectations associated with a particular status.</p>
+                        <ul class="space-y-3">
+                            <li class="bg-slate-50 p-4 rounded-lg border-l-4 border-purple-300"><strong class="font-bold">Role Conflict:</strong> Tension between <span class="italic">two or more</span> different roles. (e.g., a student's role as an employee conflicts with their role as a friend who needs help).</li>
+                            <li class="bg-slate-50 p-4 rounded-lg border-l-4 border-purple-300"><strong class="font-bold">Role Strain:</strong> Difficulty meeting the expectations of a <span class="italic">single</span> role. (e.g., a mother struggling to balance childcare and her job).</li>
+                            <li class="bg-slate-50 p-4 rounded-lg border-l-4 border-purple-300"><strong class="font-bold">Role Confusion:</strong> Uncertainty about the role one is expected to play.</li>
+                            <li class="bg-slate-50 p-4 rounded-lg border-l-4 border-purple-300"><strong class="font-bold">Sick Role:</strong> A temporary exemption from normal roles due to illness.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Groups and Networks -->
+            <div class="section-card p-8 border-purple-400">
+                 <h4 class="text-2xl font-semibold text-slate-800 mb-6">Groups and Networks: Our Connections</h4>
+                 <div class="grid md:grid-cols-2 gap-x-8 gap-y-10">
+                    <div>
+                         <h5 class="text-xl font-semibold text-slate-800 mb-3">Primary Groups</h5>
+                         <p>Intimate, close, long-term relationships with deep concern for members. (e.g., Family, close friends).</p>
+                    </div>
+                    <div>
+                         <h5 class="text-xl font-semibold text-slate-800 mb-3">Secondary Groups</h5>
+                         <p>Formal, impersonal, goal-oriented, and often temporary relationships. (e.g., A class, a workplace).</p>
+                    </div>
+                    <div>
+                         <h5 class="text-xl font-semibold text-slate-800 mb-3">In-Groups</h5>
+                         <p>A group one identifies with, creating a sense of belonging and shared identity ("we-ness").</p>
+                    </div>
+                    <div>
+                         <h5 class="text-xl font-semibold text-slate-800 mb-3">Out-Groups</h5>
+                         <p>A group one does not identify with, which can lead to feelings of competition or antagonism ("they-ness").</p>
+                    </div>
+                    <div>
+                         <h5 class="text-xl font-semibold text-slate-800 mb-3">Reference Groups</h5>
+                         <p>A group used as a standard for evaluating oneself and one's own behavior, even if not a member.</p>
+                    </div>
+                    <div>
+                         <h5 class="text-xl font-semibold text-slate-800 mb-3">Social & Virtual Networks</h5>
+                         <p>A series of social relationships linking individuals. Virtual networks (social media) are technologically-enabled.</p>
+                    </div>
+                 </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-slate-300 mt-16">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p>&copy; 2024 UCSP Study Guide. A comprehensive resource for NIGG@S understanding society.</p>
+        </div>
+    </footer>
+    
+    <!-- Scroll to Top Button -->
+    <button id="to-top-button" title="Go To Top"
+        class="hidden fixed z-50 bottom-10 right-10 p-3 border-0 w-14 h-14 rounded-full shadow-md bg-blue-500 hover:bg-blue-600 text-white text-lg font-semibold transition-all duration-300">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+        </svg>
+    </button>
+
+    <script>
+        // JavaScript for interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            const toTopButton = document.getElementById('to-top-button');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 200) {
+                    toTopButton.classList.remove('hidden');
+                } else {
+                    toTopButton.classList.add('hidden');
+                }
+            });
+            toTopButton.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href').substring(1) === entry.target.id) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, { rootMargin: "-30% 0px -70% 0px" });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+
+</body>
+</html>
