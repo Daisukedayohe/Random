@@ -1,0 +1,662 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hazards Study Guide — Hydrometeorological & Geological</title>
+  <meta name="description" content="Interactive and colorful study guide for hydrometeorological and geological hazards (Philippines-focused)." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#101820; 
+      --card:#1a2634; 
+      --muted:#a0aec0; 
+      --accent1:#ff6b6b; 
+      --accent2:#4cc9f0; 
+      --accent3:#f9c74f; 
+      --accent4:#90be6d; 
+      --glass: rgba(255,255,255,0.05);
+      --border-color: rgba(255, 255, 255, 0.1);
+      --maxw:1200px;
+    }
+
+    /* --- Base & Typography --- */
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body{
+        font-family: 'Inter', 'Segoe UI', Roboto, Arial, sans-serif;
+        margin:0;
+        background-color: var(--bg);
+        color:#f1f5f9;
+        line-height:1.7;
+        overflow-x: hidden;
+    }
+
+    /* --- Animated Background --- */
+    body::before, body::after {
+        content: '';
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        width: 120vmax;
+        height: 120vmax;
+        border-radius: 50%;
+        z-index: -1;
+        opacity: 0.15;
+        filter: blur(100px);
+        will-change: transform;
+    }
+
+    body::before {
+        background: radial-gradient(circle, var(--accent2), transparent 60%);
+        animation: move-glow1 15s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    body::after {
+        background: radial-gradient(circle, var(--accent1), transparent 60%);
+        animation: move-glow2 15s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    @keyframes move-glow1 {
+        0%, 100% { transform: translate(-60%, -60%); }
+        50% { transform: translate(-40%, -40%); }
+    }
+
+    @keyframes move-glow2 {
+        0%, 100% { transform: translate(40%, 40%); }
+        50% { transform: translate(60%, 60%); }
+    }
+
+    /* --- Layout & Header --- */
+    .wrap{
+        max-width:var(--maxw);
+        margin:0 auto;
+        padding:20px;
+        position: relative;
+        z-index: 2;
+    }
+    
+    header{
+        text-align:center;
+        padding: 40px 0;
+        border-bottom: 1px solid var(--border-color);
+        margin-bottom: 20px;
+    }
+
+    header h1{
+        font-size:clamp(1.8rem, 5vw, 2.5rem);
+        font-weight: 700;
+        margin:0;
+        background:linear-gradient(90deg,var(--accent1),var(--accent2));
+        -webkit-background-clip:text;
+        -webkit-text-fill-color:transparent;
+        letter-spacing: -1px;
+    }
+
+    header p{
+        color:var(--muted);
+        max-width: 600px;
+        margin: 10px auto 0;
+    }
+
+    /* --- Navigation --- */
+    nav{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:10px;
+        margin:20px 0;
+        position: sticky;
+        top: 10px;
+        padding: 10px;
+        background: rgba(16, 24, 32, 0.7);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 999px;
+        z-index: 10;
+        border: 1px solid var(--border-color);
+    }
+    nav a{
+        padding:10px 20px;
+        border-radius:999px;
+        background:var(--glass);
+        border: 1px solid transparent;
+        cursor:pointer;
+        font-weight:600;
+        transition: all 0.2s ease-in-out;
+        color: var(--muted);
+        text-decoration: none;
+        font-size: 0.9rem;
+    }
+    nav a:hover{
+        background: rgba(255,255,255,0.1);
+        color: #fff;
+        transform: translateY(-2px);
+    }
+    nav a.active {
+        background: var(--accent2);
+        color: var(--bg);
+        border-color: var(--accent2);
+        box-shadow: 0 0 15px rgba(76, 201, 240, 0.4);
+    }
+
+    /* --- Sections & Cards --- */
+    section{
+        margin:40px 0;
+        padding:clamp(1.5rem, 5vw, 2rem);
+        border-radius:16px;
+        background:var(--card);
+        border:1px solid var(--border-color);
+        box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    section:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 40px rgba(0,0,0,0.2);
+    }
+    
+    section h2{
+        margin-top:0;
+        font-size:clamp(1.5rem, 4vw, 1.8rem);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    section h2 .icon {
+        display: inline-block;
+        width: 28px;
+        height: 28px;
+    }
+
+    section h2[data-color="accent2"] { color: var(--accent2); }
+    section h2[data-color="accent3"] { color: var(--accent3); }
+    section h2[data-color="accent4"] { color: var(--accent4); }
+
+    section h3{margin-top:1.5rem;color:var(--accent3)}
+    section h4{margin-top:1.5rem;color:var(--accent4)}
+
+    ul,ol{margin:0 0 1rem 1.2rem; padding-left: 1rem;}
+    li{margin-bottom:0.6rem; padding-left: 0.5rem;}
+    li::marker {
+        color: var(--accent2);
+        font-weight: 600;
+    }
+    strong { color: var(--accent3); }
+
+    /* --- Interactive Elements --- */
+    .typhoon-lifecycle {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        margin: 2rem 0;
+        padding: 0;
+        list-style-type: none;
+    }
+    .typhoon-lifecycle::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background-color: var(--border-color);
+        transform: translateY(-50%);
+    }
+    .lifecycle-stage {
+        flex: 1;
+        text-align: center;
+        position: relative;
+        cursor: pointer;
+    }
+    .lifecycle-stage .dot {
+        width: 20px;
+        height: 20px;
+        background-color: var(--card);
+        border: 3px solid var(--accent2);
+        border-radius: 50%;
+        display: inline-block;
+        transition: transform 0.2s ease;
+    }
+     .lifecycle-stage .stage-name {
+        margin-top: 10px;
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+    .lifecycle-stage .stage-desc {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out, margin-top 0.3s ease-in-out;
+        font-size: 0.85rem;
+        color: var(--muted);
+    }
+    .lifecycle-stage:hover .dot {
+        transform: scale(1.3);
+    }
+    .lifecycle-stage.active .stage-desc {
+        max-height: 50px;
+        margin-top: 5px;
+    }
+    .lifecycle-stage.active .dot {
+        transform: scale(1.4);
+        background-color: var(--accent1);
+        border-color: var(--accent1);
+    }
+
+    .hazard-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+    .hazard-card {
+        background-color: var(--glass);
+        padding: 1rem;
+        border-radius: 8px;
+        border: 1px solid var(--border-color);
+        transition: background-color 0.2s, transform 0.2s;
+    }
+    .hazard-card:hover {
+        background-color: rgba(255,255,255,0.08);
+        transform: translateY(-4px);
+    }
+    .hazard-card strong {
+        display: block;
+        margin-bottom: 0.25rem;
+    }
+    
+    .preparedness-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    }
+
+    .prep-card {
+        padding: 1.5rem;
+        border-radius: 12px;
+        border: 1px solid var(--border-color);
+        background: var(--glass);
+    }
+
+    .prep-card h4 {
+        margin-top: 0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .prep-card h4 .icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* --- Table --- */
+    table{
+        width:100%;
+        border-collapse:collapse;
+        margin-top:1.5rem;
+        font-size:0.95rem;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    th,td{
+        border-bottom:1px solid var(--border-color);
+        padding:12px 15px;
+        text-align:left
+    }
+    th{background:rgba(255,255,255,0.05); color: var(--accent2); font-weight: 600;}
+    tbody tr:last-child td { border-bottom: none; }
+    tbody tr:hover { background-color: var(--glass); }
+
+    /* --- Misc & Footer --- */
+    .highlight{
+        background:linear-gradient(90deg,rgba(76,201,240,0.1),rgba(255,107,107,0.1));
+        padding:15px;
+        border-radius:8px;
+        margin-top:12px;
+        border-left: 3px solid var(--accent2);
+        font-size: 0.95rem;
+    }
+
+    /* --- Back to Top Button --- */
+    #to-top-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        background-color: var(--accent2);
+        color: var(--bg);
+        border: none;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(20px);
+        transition: opacity 0.3s, visibility 0.3s, transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+        z-index: 100;
+        box-shadow: 0 4px 15px rgba(76, 201, 240, 0.4);
+    }
+    #to-top-btn.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    #to-top-btn svg {
+        width: 24px;
+        height: 24px;
+    }
+    #to-top-btn:hover {
+        box-shadow: 0 8px 25px rgba(76, 201, 240, 0.6);
+        background-color: #57d2f5;
+    }
+    #to-top-btn.show:hover {
+        transform: translateY(-5px);
+    }
+
+
+    footer{
+        text-align:center;
+        margin:50px 0 30px;
+        color:var(--muted);
+        font-size:0.9rem
+    }
+    .names{
+        margin-top:10px;
+        font-weight:600;
+        color:var(--accent3)
+    }
+
+    /* --- Custom Scrollbar --- */
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        background: var(--bg);
+    }
+    ::-webkit-scrollbar-thumb {
+        background: var(--border-color);
+        border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: rgba(255,255,255,0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Hazards Study Guide — Hydrometeorological & Geological</h1>
+      <p>Complete interactive guide for study purposes. Includes all definitions, signs, tools, and preparedness steps.</p>
+      <div class="names">Prepared by: Gerald Ybañez, David Bartolome, Hun Diaz</div>
+    </header>
+
+    <nav>
+      <a href="#overview" class="btn active">Overview</a>
+      <a href="#hydromet" class="btn">Hydromet Hazards</a>
+      <a href="#geological" class="btn">Geological Hazards</a>
+      <a href="#preparedness" class="btn">Preparedness</a>
+    </nav>
+    
+    <!-- Section: Overview -->
+    <section id="overview">
+      <h2 data-color="accent2">
+        <span class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" /></svg>
+        </span>
+        Overview
+      </h2>
+      <p>The Philippines' location near the Equator places it along the <strong>ITCZ (Inter-Tropical Convergence Zone)</strong>, leading to frequent cyclones and storms and making it vulnerable to both hydrometeorological and geological hazards.</p>
+      <table>
+        <thead><tr><th>Feature</th><th>Hydromet</th><th>Geological</th></tr></thead>
+        <tbody>
+          <tr><td>Origin</td><td>Atmosphere, water cycle</td><td>Earth’s processes, tectonics</td></tr>
+          <tr><td>Timescale</td><td>Minutes to months</td><td>Seconds to years</td></tr>
+          <tr><td>Examples</td><td>Typhoons, Floods, El Niño</td><td>Landslides, Sinkholes</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Section: Hydrometeorological -->
+    <section id="hydromet">
+        <h2 data-color="accent2">
+            <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" /></svg>
+            </span>
+            Hydrometeorological Hazards
+        </h2>
+        <p>Hydrometeorological hazards are caused by dangerous weather, atmospheric, or water-related processes.</p>
+        <h3>Typhoon (Bagyo)</h3>
+        <p>Intense circulating winds (>118 km/h). Lifecycle:</p>
+        <ol class="typhoon-lifecycle">
+          <li class="lifecycle-stage">
+            <span class="dot"></span>
+            <div class="stage-name">Formative</div>
+            <div class="stage-desc">Disorganized clouds</div>
+          </li>
+          <li class="lifecycle-stage">
+            <span class="dot"></span>
+            <div class="stage-name">Immature</div>
+            <div class="stage-desc">Pressure drops, rotation develops</div>
+          </li>
+          <li class="lifecycle-stage">
+            <span class="dot"></span>
+            <div class="stage-name">Mature</div>
+             <div class="stage-desc">Max intensity, stable pressure</div>
+          </li>
+          <li class="lifecycle-stage">
+            <span class="dot"></span>
+            <div class="stage-name">Decaying</div>
+             <div class="stage-desc">Weakens, pressure rises</div>
+          </li>
+        </ol>
+        <div class="highlight">
+            <h4 style="margin-top:0; color: var(--accent1);">Public Storm Warning Signals (PSWS)</h4>
+            <ul style="padding-left: 1.2rem; margin-bottom: 0;">
+                <li><strong>Signal 1 (30–60 kph):</strong> Slight damage, banana plants tilted.</li>
+                <li><strong>Signal 2 (61–120 kph):</strong> Moderate damage, trees broken, rice/corn affected.</li>
+                <li><strong>Signal 3 (121–170 kph):</strong> Heavy damage, old/light houses unroofed, big trees uprooted.</li>
+                <li><strong>Signal 4 (171–220 kph):</strong> Very heavy damage, up to 75% structures destroyed.</li>
+                <li><strong>Signal 5 (>220 kph):</strong> Catastrophic damage, most tall trees broken.</li>
+            </ul>
+        </div>
+        <h3>Other Hydromet Hazards</h3>
+        <div class="hazard-grid">
+            <div class="hazard-card"><strong>Thunderstorm:</strong> heavy rain, thunder & lightning.</div>
+            <div class="hazard-card"><strong>Flood:</strong> excessive water on land (due to rain, poor drainage, low-lying).</div>
+            <div class="hazard-card"><strong>Flash Flood:</strong> sudden strong flow on slopes/poor soil absorption.</div>
+            <div class="hazard-card"><strong>Storm Surge:</strong> abnormal coastal water rise due to typhoon or seaquake.</div>
+            <div class="hazard-card"><strong>Tornado (Ipo-ipo):</strong> rotating column of air touching land; 12–24 per year in PH (Mindanao, Central Luzon).</div>
+            <div class="hazard-card"><strong>El Niño:</strong> Pacific Ocean warms → drought in PH.</div>
+            <div class="hazard-card"><strong>La Niña:</strong> Pacific Ocean cools → heavy rain, floods.</div>
+        </div>
+        <h3>Monitoring Tools</h3>
+        <ul>
+          <li><strong>Doppler Radar:</strong> measures rainfall, wind speed & direction; forecasts typhoons.</li>
+          <li><strong>Automated Rain Gauge:</strong> detects excessive rainfall → possible floods/flash floods.</li>
+        </ul>
+    </section>
+
+    <!-- Section: Geological -->
+    <section id="geological">
+        <h2 data-color="accent3">
+            <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>
+            </span>
+            Geological Hazards
+        </h2>
+        <p>Geological hazards are natural processes from the earth (involving soil, rock, or ground movement) that pose a danger to people, properties, and the environment.</p>
+        <h3>Landslide</h3>
+        <p>A <strong>Landslide</strong> (also called a Landslip) is ground movement on a sloping terrain, triggered by gravity and often exacerbated by heavy rainfall. Contributors and warning signs include:</p>
+        <ol>
+          <li>Water seepage, saturation</li>
+          <li>Soil loosening near foundations</li>
+          <li>New cracks/bulges</li>
+          <li>Broken underground lines/vibrations</li>
+          <li>Leaning poles, fences</li>
+          <li>Silted creek flow</li>
+        </ol>
+        <h3>Sinkhole</h3>
+        <p>Depression from collapse of surface over dissolved rock/weak ground. Worsened by flooding.</p>
+        <h3>Signs</h3>
+        <ul>
+          <li>Landslides: new springs, cracks, leaning poles</li>
+          <li>Sinkholes: cloudy groundwater, sudden ponds, leaning posts</li>
+        </ul>
+        <h3>Tools</h3>
+        <ul>
+          <li>Abney level, laser range finder (landslides)</li>
+          <li><strong>GPR (Ground Penetrating Radar):</strong> Detects underground cavities for sinkholes.</li>
+        </ul>
+    </section>
+
+    <!-- Section: Preparedness -->
+    <section id="preparedness">
+        <h2 data-color="accent4">
+            <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.286zm0 13.036h.008v.008h-.008v-.008z" /></svg>
+            </span>
+            Preparedness & Response
+        </h2>
+        <h3>Hydromet</h3>
+        <div class="preparedness-grid">
+            <div class="prep-card">
+                <h4>
+                    <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0h18M-4.5 12h22.5" /></svg></span>
+                    Before
+                </h4>
+                <p>Stock food, water, meds, flashlight, radio. Secure roof & valuables. Plan evacuation.</p>
+            </div>
+            <div class="prep-card">
+                 <h4>
+                    <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.75l7.5-7.5 7.5 7.5" /><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75l7.5-7.5 7.5 7.5" /></svg></span>
+                    During
+                </h4>
+                <p>Stay indoors, listen to advisories, unplug appliances, evacuate if told.</p>
+            </div>
+            <div class="prep-card">
+                 <h4>
+                    <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" /></svg></span>
+                    After
+                </h4>
+                <p>Return home only after clearance, report hazards, inspect house safely.</p>
+            </div>
+        </div>
+        <h3 style="margin-top: 2rem;">Geological</h3>
+        <div class="preparedness-grid">
+            <div class="prep-card">
+                <h4>
+                    <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0h18M-4.5 12h22.5" /></svg></span>
+                    Before
+                </h4>
+                <p>Avoid steep slopes, plant trees, build diversion channels.</p>
+            </div>
+            <div class="prep-card">
+                 <h4>
+                    <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.75l7.5-7.5 7.5 7.5" /><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75l7.5-7.5 7.5 7.5" /></svg></span>
+                    During
+                </h4>
+                <p>Move away, listen for cracking sounds, curl into a ball if trapped.</p>
+            </div>
+            <div class="prep-card">
+                 <h4>
+                    <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" /></svg></span>
+                    After
+                </h4>
+                <p>Avoid area, watch for flooding, report trapped people.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+      <p>Study guide built from your slides — includes ITCZ, Typhoon lifecycle, PSWS, Tornado stats, El Niño/La Niña, signs, tools, preparedness.</p>
+      <p class="names">Prepared by: Gerald Ybañez, David Bartolome, Hun Diaz</p>
+    </footer>
+  </div>
+  <button id="to-top-btn" title="Go to top">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+    </svg>
+  </button>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav a');
+
+        // --- Intersection Observer for scroll animations and active nav link ---
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.3 // A section is "active" when 30% is visible
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                // Highlight the active nav link
+                const link = document.querySelector(`nav a[href="#${entry.target.id}"]`);
+                if (entry.isIntersecting && entry.intersectionRatio >= 0.3) {
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    if(link) {
+                        link.classList.add('active');
+                    }
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // --- Smooth scrolling for nav links (fallback) ---
+        navLinks.forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // --- Back to Top Button Logic ---
+        const toTopBtn = document.getElementById('to-top-btn');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                toTopBtn.classList.add('show');
+            } else {
+                toTopBtn.classList.remove('show');
+            }
+        });
+        toTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // --- Interactive Typhoon Lifecycle ---
+        const lifecycleStages = document.querySelectorAll('.lifecycle-stage');
+        lifecycleStages.forEach(stage => {
+            stage.addEventListener('click', () => {
+                const wasActive = stage.classList.contains('active');
+                lifecycleStages.forEach(s => s.classList.remove('active'));
+                if (!wasActive) {
+                    stage.classList.add('active');
+                }
+            });
+        });
+    });
+  </script>
+</body>
+</html>
+
