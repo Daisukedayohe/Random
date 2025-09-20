@@ -420,12 +420,22 @@
             <span class="icon">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 9l10.5-3m0 6.553v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 11-.99-3.467l2.31-.66a2.25 2.25 0 001.632-2.163zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 01-.99-3.467l2.31-.66A2.25 2.25 0 009 15.553z" /></svg>
             </span>
+          Best song while studying
         </h2>
-      <p style="text-align:center; color: var(--muted); margin-top: 1.5rem;">Best song while studying</p>
-        <div style="display: flex; justify-content: center; margin-top: 1rem; padding: 0 1rem;">
-            <audio controls src="Rob Deniel performs Ikaw Sana and Nandito Ako LIVE on Wish 107.5.mp3" style="width: 100%; max-width: 500px; border-radius: 50px; border: 1px solid var(--border-color);">
-                Your browser does not support the audio element.
-            </audio>
+        <p style="text-align:center; color: var(--muted); margin-top: 1.5rem;">Listen to the study guide summary:</p>
+        <div class="custom-audio-player-container">
+            <audio class="audio-element" src="Rob Deniel performs Ikaw Sana and Nandito Ako LIVE on Wish 107.5.mp3" preload="metadata"></audio>
+            <button class="play-pause-btn" aria-label="Play/Pause">
+                <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24px" height="24px"><path d="M8 5v14l11-7z"></path></svg>
+                <svg class="pause-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24px" height="24px" style="display: none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path></svg>
+            </button>
+            <div class="player-controls">
+                <span class="current-time">0:00</span>
+                <div class="progress-bar-wrapper">
+                    <div class="progress-bar"></div>
+                </div>
+                <span class="total-duration">0:00</span>
+            </div>
         </div>
 
       <p style="text-align:center; color: var(--muted); margin-top: 2.5rem;">or....................</p>
@@ -689,6 +699,129 @@
         });
     });
   </script>
+  <style>
+            .custom-audio-player-container {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                padding: 10px 20px;
+                background-color: var(--glass);
+                border: 1px solid var(--border-color);
+                border-radius: 50px;
+                max-width: 500px;
+                margin: 1rem auto 0;
+                backdrop-filter: blur(5px);
+            }
+            .play-pause-btn {
+                background-color: var(--accent2);
+                border: none;
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                color: var(--bg);
+                flex-shrink: 0;
+                transition: transform 0.2s, box-shadow 0.2s;
+            }
+            .play-pause-btn:hover {
+                transform: scale(1.1);
+                box-shadow: 0 0 15px rgba(76, 201, 240, 0.5);
+            }
+            .player-controls {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                width: 100%;
+            }
+            .current-time, .total-duration {
+                font-size: 0.85rem;
+                color: var(--muted);
+                min-width: 35px;
+                text-align: center;
+            }
+            .progress-bar-wrapper {
+                width: 100%;
+                height: 6px;
+                background-color: rgba(255, 255, 255, 0.1);
+                border-radius: 3px;
+                cursor: pointer;
+            }
+            .progress-bar {
+                height: 100%;
+                width: 0;
+                background-color: var(--accent2);
+                border-radius: 3px;
+            }
+        </style>
+
+        <script>
+            // Self-invoking function to avoid polluting the global scope
+            (function() {
+                const player = document.querySelector('.custom-audio-player-container');
+                if (!player) return; // Don't run if the player isn't on the page
+
+                // Check if this script has already run for this player
+                if (player.dataset.initialized) return;
+                player.dataset.initialized = 'true';
+
+                const audio = player.querySelector('.audio-element');
+                const playPauseBtn = player.querySelector('.play-pause-btn');
+                const playIcon = player.querySelector('.play-icon');
+                const pauseIcon = player.querySelector('.pause-icon');
+                const progressBar = player.querySelector('.progress-bar');
+                const progressBarWrapper = player.querySelector('.progress-bar-wrapper');
+                const currentTimeEl = player.querySelector('.current-time');
+                const totalDurationEl = player.querySelector('.total-duration');
+
+                function formatTime(seconds) {
+                    const minutes = Math.floor(seconds / 60);
+                    const secs = Math.floor(seconds % 60);
+                    return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+                }
+
+                function togglePlayPause() {
+                    if (audio.paused) {
+                        audio.play();
+                        playIcon.style.display = 'none';
+                        pauseIcon.style.display = 'inline-block';
+                    } else {
+                        audio.pause();
+                        playIcon.style.display = 'inline-block';
+                        pauseIcon.style.display = 'none';
+                    }
+                }
+
+                function updateProgress() {
+                    const progressPercent = (audio.currentTime / audio.duration) * 100;
+                    progressBar.style.width = `${progressPercent}%`;
+                    currentTimeEl.textContent = formatTime(audio.currentTime);
+                }
+
+                function setProgress(e) {
+                    const width = this.clientWidth;
+                    const clickX = e.offsetX;
+                    const duration = audio.duration;
+                    audio.currentTime = (clickX / width) * duration;
+                }
+
+                audio.addEventListener('loadedmetadata', () => {
+                    totalDurationEl.textContent = formatTime(audio.duration);
+                });
+                
+                playPauseBtn.addEventListener('click', togglePlayPause);
+                audio.addEventListener('timeupdate', updateProgress);
+                audio.addEventListener('ended', () => {
+                    playIcon.style.display = 'inline-block';
+                    pauseIcon.style.display = 'none';
+                    progressBar.style.width = '0%';
+                    audio.currentTime = 0;
+                });
+                progressBarWrapper.addEventListener('click', setProgress);
+            })();
+        </script>
 </body>
 </html>
 
